@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.font-lexend {
+    font-family: 'Lexend', sans-serif;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.active-tab {
+    border-left: 4px solid #bb0027;
+    background-color: #f0eded;
+}
+
+.studio-bg {
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+}

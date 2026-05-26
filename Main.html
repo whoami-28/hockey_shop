@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="light" lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>POWERPLAY HOCKEY | Главная</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="bg-white text-slate-900">
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <nav class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="Main.html" class="text-2xl font-black tracking-tighter font-lexend italic">POWERPLAY HOCKEY</a>
+            
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="Catalog.html" class="hover:text-blue-600 transition">Коньки</a>
+                <a href="Catalog.html" class="hover:text-blue-600 transition">Клюшки</a>
+                <a href="Catalog.html" class="hover:text-blue-600 transition">Защита</a>
+                <a href="Catalog.html" class="hover:text-blue-600 transition">Шлемы</a>
+            </div>
+
+            <div class="flex items-center space-x-5">
+                <a href="UserProfile.html" class="p-2 hover:bg-slate-100 rounded-full transition">
+                    <span class="material-symbols-outlined">account_circle</span>
+                </a>
+                <a href="ShopingCart.html" class="p-2 hover:bg-slate-100 rounded-full transition">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="relative h-[80vh] flex items-center overflow-hidden bg-slate-900">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/60 to-transparent"></div>
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1515703407324-5f753eed2311?q=80&w=2070&auto=format&fit=crop'); opacity: 0.7;"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 w-full">
+            <h1 class="text-6xl md:text-8xl font-black italic tracking-tighter text-white font-lexend mb-6">
+                ДОМИНИРУЙ<br>НА ЛЬДУ
+            </h1>
+            <p class="text-xl text-slate-300 max-w-xl mb-8">
+                Экипировка нового поколения для тех, кто не привык проигрывать. Технологии профессионального уровня теперь доступны каждому.
+            </p>
+            <div class="flex space-x-4">
+                <a href="Catalog.html" class="px-8 py-4 bg-white text-slate-900 font-bold rounded-full hover:bg-blue-600 hover:text-white transition transform hover:scale-105">
+                    В КАТАЛОГ
+                </a>
+                <a href="Catalog.html" class="px-8 py-4 border-2 border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition">
+                    НОВИНКИ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-black font-lexend italic mb-12">ВЫБЕРИ СВОЕ ОРУЖИЕ</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="Catalog.html" class="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-slate-100">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition"></div>
+                <div class="absolute bottom-6 left-6 text-white z-10">
+                    <p class="text-sm font-bold uppercase tracking-widest opacity-80">Профессионально</p>
+                    <h3 class="text-2xl font-black font-lexend italic">ЭЛИТНЫЕ КОНЬКИ</h3>
+                </div>
+            </a>
+            <a href="Catalog.html" class="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-slate-100">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition"></div>
+                <div class="absolute bottom-6 left-6 text-white z-10">
+                    <p class="text-sm font-bold uppercase tracking-widest opacity-80">Точность</p>
+                    <h3 class="text-2xl font-black font-lexend italic">КЛЮШКИ BAUER</h3>
+                </div>
+            </a>
+            <a href="Catalog.html" class="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-slate-100">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition"></div>
+                <div class="absolute bottom-6 left-6 text-white z-10">
+                    <p class="text-sm font-bold uppercase tracking-widest opacity-80">Стена</p>
+                    <h3 class="text-2xl font-black font-lexend italic">ВРАТАРЬ</h3>
+                </div>
+            </a>
+            <a href="Catalog.html" class="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-slate-100">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition"></div>
+                <div class="absolute bottom-6 left-6 text-white z-10">
+                    <p class="text-sm font-bold uppercase tracking-widest opacity-80">Безопасность</p>
+                    <h3 class="text-2xl font-black font-lexend italic">ШЛЕМЫ</h3>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-slate-50 border-t border-slate-200 py-20 mt-20">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-2">
+                <h4 class="text-xl font-black italic font-lexend mb-6 uppercase tracking-tighter">POWERPLAY HOCKEY</h4>
+                <p class="text-slate-500 max-w-sm mb-8">Магазин для тех, кто живет хоккеем. Мы поставляем только проверенную экипировку от ведущих брендов мира.</p>
+                <div class="flex space-x-4">
+                    <div class="w-10 h-10 bg-white border border-slate-200 rounded-full flex items-center justify-center cursor-pointer">IG</div>
+                    <div class="w-10 h-10 bg-white border border-slate-200 rounded-full flex items-center justify-center cursor-pointer">YT</div>
+                    <div class="w-10 h-10 bg-white border border-slate-200 rounded-full flex items-center justify-center cursor-pointer">VK</div>
+                </div>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Магазин</h5>
+                <ul class="space-y-4 text-slate-500">
+                    <li><a href="Catalog.html" class="hover:text-blue-600 transition">Каталог</a></li>
+                    <li><a href="Catalog.html" class="hover:text-blue-600 transition">Бренды</a></li>
+                    <li><a href="Catalog.html" class="hover:text-blue-600 transition">Скидки</a></li>
+                    <li><a href="Catalog.html" class="hover:text-blue-600 transition">Адреса магазинов</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Поддержка</h5>
+                <ul class="space-y-4 text-slate-500">
+                    <li><a href="#" class="hover:text-blue-600 transition">Доставка</a></li>
+                    <li><a href="#" class="hover:text-blue-600 transition">Возврат</a></li>
+                    <li><a href="#" class="hover:text-blue-600 transition">Гарантия</a></li>
+                    <li><a href="#" class="hover:text-blue-600 transition">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-20 pt-8 border-t border-slate-200 text-sm text-slate-400">
+            © 2026 PowerPlay Hockey. Все права защищены.
+        </div>
+    </footer>
+</body>
+</html>

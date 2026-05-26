@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="light" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="tailwind-config.js"></script>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body class="bg-background text-black antialiased">
+<nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+<div class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto w-full">
+<div class="flex items-center gap-12">
+<a href="Main.html" class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter">POWERPLAY HOCKEY</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-gray-600 font-lexend font-bold uppercase tracking-tighter hover:text-red-600 transition-all duration-150" href="Catalog.html">Коньки</a>
+<a class="text-gray-600 font-lexend font-bold uppercase tracking-tighter hover:text-red-600 transition-all duration-150" href="Catalog.html">Клюшки</a>
+<a class="text-gray-600 font-lexend font-bold uppercase tracking-tighter hover:text-red-600 transition-all duration-150" href="Catalog.html">Защита</a>
+<a class="text-gray-600 font-lexend font-bold uppercase tracking-tighter hover:text-red-600 transition-all duration-150" href="Catalog.html">Шлемы</a>
+<a class="text-gray-600 font-lexend font-bold uppercase tracking-tighter hover:text-red-600 transition-all duration-150" href="Catalog.html">Вратарь</a>
+<a class="text-gray-600 font-lexend font-bold uppercase tracking-tighter hover:text-red-600 transition-all duration-150" href="Catalog.html">Одежда</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="pl-10 pr-4 py-2 bg-gray-100 border-none focus:ring-2 focus:ring-primary text-sm font-bold uppercase tracking-widest w-64" placeholder="ПОИСК" type="text"/>
+</div>
+<a href="ShopingCart.html" class="material-symbols-outlined text-black hover:text-secondary transition-all inline-block">shopping_cart</a>
+<a href="UserProfile.html" class="material-symbols-outlined text-secondary font-bold inline-block" style="font-variation-settings: 'FILL' 1;">account_circle</a>
+</div>
+</div>
+</nav>
+<main class="max-w-[1440px] mx-auto min-h-[calc(100vh-80px)] flex">
+<aside class="w-80 border-r border-gray-300 bg-white p-8 flex flex-col gap-8">
+<div class="flex flex-col gap-2">
+<h2 class="font-lexend text-2xl font-bold text-primary uppercase tracking-tighter">Мой аккаунт</h2>
+<p class="text-gray-500 text-xs font-bold uppercase tracking-widest">ID спортсмена: #882910</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="active-tab flex items-center gap-4 px-4 py-4 text-black font-bold uppercase tracking-widest transition-all" href="UserProfile.html">
+<span class="material-symbols-outlined">person</span> Обзор профиля
+</a>
+<a class="flex items-center gap-4 px-4 py-4 text-gray-500 hover:bg-gray-100 font-bold uppercase tracking-widest transition-all" href="#">
+<span class="material-symbols-outlined">shopping_bag</span> Активные заказы
+</a>
+<a class="flex items-center gap-4 px-4 py-4 text-gray-500 hover:bg-gray-100 font-bold uppercase tracking-widest transition-all" href="#">
+<span class="material-symbols-outlined">military_tech</span> Уровни и бонусы
+</a>
+<a class="flex items-center gap-4 px-4 py-4 text-gray-500 hover:bg-gray-100 font-bold uppercase tracking-widest transition-all" href="#">
+<span class="material-symbols-outlined">history</span> История покупок
+</a>
+<a class="flex items-center gap-4 px-4 py-4 text-gray-500 hover:bg-gray-100 font-bold uppercase tracking-widest transition-all" href="#">
+<span class="material-symbols-outlined">settings</span> Настройки
+</a>
+</nav>
+<div class="mt-auto border-t border-gray-300 pt-8">
+<button class="flex items-center gap-4 px-4 py-2 text-red-600 font-bold uppercase tracking-widest hover:bg-red-50 transition-all w-full text-left">
+<span class="material-symbols-outlined">logout</span> Выйти
+</button>
+</div>
+</aside>
+<section class="flex-1 p-12 bg-gray-50">
+<div class="relative bg-primary p-12 overflow-hidden border-b-4 border-secondary flex justify-between items-center mb-12">
+<div class="z-10 relative">
+<div class="bg-secondary text-white inline-block px-3 py-1 font-bold text-xs uppercase tracking-widest mb-4">Pro Elite Уровень</div>
+<h1 class="font-lexend text-5xl font-black text-white uppercase tracking-tighter leading-none mb-2">МАРКУС РАЙНХАРДТ</h1>
+<p class="text-gray-300 text-lg uppercase tracking-widest">В клубе с 2019 • Powerplay Rewards Gold</p>
+</div>
+<div class="z-10 relative text-right">
+<div class="text-secondary font-lexend text-6xl font-black leading-none">2,450</div>
+<div class="text-white font-bold uppercase tracking-widest">Доступно баллов</div>
+</div>
+<div class="absolute inset-0 opacity-20">
+<img class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDjOXD9FtZAvOmqyxgIzb0zJtYrA8JblzhR0NFrb9rvh0J3hHlmiXVYry7UOrezK5THwd9xe6oTY-XAQSk663Cg3LyogJCHkACxluT9l381wIqBReh_ija82Subhx_s06xD70tf6XcYunOIhe8yDph8Qh-4eQkFifJk7bAAEFD6C35kLh9NM_kHaHGjodzT3Ih78CdlwhAAihDTFl0xSrp24INb6pY275qR7c7zdlnuOBIrrzIQfaSO5tcJifRyaYh3tM9ChiyzSs"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
+</div>
+<div class="grid grid-cols-12 gap-6 mb-12">
+<div class="col-span-8 bg-white border border-gray-300 p-8 flex flex-col justify-between">
+<div>
+<h3 class="font-lexend text-2xl font-bold text-primary uppercase tracking-tighter mb-6">Статистика сезона</h3>
+<div class="grid grid-cols-3 gap-8">
+<div>
+<div class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Сумма покупок</div>
+<div class="font-lexend text-2xl font-bold text-primary">13185 BYN</div>
+</div>
+<div>
+<div class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Отзывы об экипировке</div>
+<div class="font-lexend text-2xl font-bold text-primary">12 Товаров</div>
+</div>
+<div>
+<div class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Рейтинг сообщества</div>
+<div class="font-lexend text-2xl font-bold text-secondary">#142</div>
+</div>
+</div>
+</div>
+<div class="mt-12">
+<div class="flex justify-between font-bold uppercase text-xs mb-2">
+<span>Прогресс до уровня Зал Славы</span>
+<span class="text-secondary">Осталось 850 баллов</span>
+</div>
+<div class="w-full h-2 bg-gray-200">
+<div class="h-full bg-secondary" style="width: 75%"></div>
+</div>
+</div>
+</div>
+<div class="col-span-4 flex flex-col gap-6">
+<div class="bg-secondary p-8 flex flex-col gap-4 text-white hover:brightness-110 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-4xl">bolt</span>
+<div class="font-lexend text-2xl font-bold uppercase tracking-tighter leading-none">Быстрый повтор</div>
+<p class="text-xs uppercase tracking-widest opacity-80">Набор профессиональных лент и воска</p>
+</div>
+<div class="bg-primary p-8 flex flex-col gap-4 text-white hover:bg-zinc-900 transition-all cursor-pointer border-b-4 border-gray-600">
+<span class="material-symbols-outlined text-4xl">confirmation_number</span>
+<div class="font-lexend text-2xl font-bold uppercase tracking-tighter leading-none">Потратить баллы</div>
+<p class="text-xs uppercase tracking-widest opacity-80">Посмотреть эксклюзивные ваучеры</p>
+</div>
+</div>
+<div class="col-span-12 bg-white border border-gray-300 p-8">
+<div class="flex justify-between items-center mb-8 border-b border-gray-300 pb-6">
+<h3 class="font-lexend text-2xl font-bold text-primary uppercase tracking-tighter mb-6">Отслеживание доставки</h3>
+<a class="text-secondary font-bold uppercase tracking-widest hover:underline decoration-2 underline-offset-4" href="#">Все заказы</a>
+</div>
+<div class="flex items-center gap-12">
+<div class="w-32 h-32 bg-gray-100 p-4 flex items-center justify-center">
+<img class="w-full h-full object-contain mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-2jxzdk-Jw35tVCBBxmN80xp4BGFxwFXBroEd0aUoqwaktbgLV3aO0I0KkBf70AQp3NXtoMdKeUb9wkLOsg9Ljii5VVhktPqEm4gaJGWwN-Cku7diYujlOWLGL2yeGH68SQxR0ddoNEEi2T1RX7pmvihjUDN0c5VApMLHRWgbbF6TTBZFuTsq7x-AGuWMnqCHochne-_tb0E1NpD_lEpDlL88rHYP_XnS-qE0Pdt6GwvYsFlOJ0esQl3NN-XzHfyIYNiKmb5qShY"/>
+</div>
+<div class="flex-1">
+<div class="bg-gray-200 px-2 py-1 inline-block text-[10px] font-bold uppercase tracking-widest mb-2">Заказ #PW-990218-X</div>
+<h4 class="font-lexend text-xl font-bold text-primary uppercase tracking-tighter mb-1">Коньки Nexus Performance - Кастом</h4>
+<p class="text-gray-500 text-xs font-bold uppercase tracking-widest">Текущий статус: В пути (у курьера)</p>
+</div>
+<div class="flex flex-col gap-4 items-end">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-bold uppercase tracking-widest">Прибытие: Сегодня к 18:00</span>
+</div>
+<button class="bg-primary text-white px-8 py-3 font-bold uppercase tracking-widest text-sm hover:bg-zinc-800 transition-all">Отследить груз</button>
+</div>
+</div>
+</div>
+<div class="col-span-6 bg-white border border-gray-300 p-8">
+<h3 class="font-lexend text-2xl font-bold text-primary uppercase tracking-tighter mb-6">Профиль экипировки</h3>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between border-b border-gray-100 py-3">
+<span class="text-gray-500 font-bold uppercase tracking-widest">Жесткость клюшки</span>
+<span class="text-primary font-bold">85 Флекс / P92 Загиб</span>
+</div>
+<div class="flex justify-between border-b border-gray-100 py-3">
+<span class="text-gray-500 font-bold uppercase tracking-widest">Радиус заточки</span>
+<span class="text-primary font-bold">1/2" ROH</span>
+</div>
+<div class="flex justify-between border-b border-gray-100 py-3">
+<span class="text-gray-500 font-bold uppercase tracking-widest">Размер шлема</span>
+<span class="text-primary font-bold">Large - 37.5 Вставка</span>
+</div>
+</div>
+</div>
+<div class="col-span-6 bg-white border border-gray-300 p-8">
+<h3 class="font-lexend text-2xl font-bold text-primary uppercase tracking-tighter mb-6">Рекомендуем вам</h3>
+<div class="flex gap-4">
+<a href="Card.html" class="flex-1 bg-gray-50 p-4 hover:border-secondary border border-transparent transition-all group block">
+<div class="h-32 mb-4">
+<img class="w-full h-full object-contain mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8hHzr_tckufXxQwEmPyF_AXtf2Vuwpcki72n9PLJBegzAn13Jn85de6VJ8t0p1Akh9enVbU9ISWxtJ-0OwkhOrlueeeYliV5cPlRq17wL5qhXJigIQKKew7kTEEwGfKummweTLBhkdMqRxObplz2di8ZfKuEntqCw8vMe5h0qWf72H-d2zPhYR6LKBEgtplNpIb7dKYKPCxOvFbzUs3ix3sbURsMCEq15-vEhMSdeDiER688TXiFiJlRqz2l0iZNetsjkMrsp2qE"/>
+</div>
+<div class="text-[10px] text-secondary font-bold uppercase tracking-tighter">Новинка</div>
+<div class="font-bold uppercase text-xs tracking-tighter line-clamp-2 text-black">Карбоновая клюшка AeroX Pro</div>
+</a>
+<a href="Card.html" class="flex-1 bg-gray-50 p-4 hover:border-secondary border border-transparent transition-all group block">
+<div class="h-32 mb-4">
+<img class="w-full h-full object-contain mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHauJTr_R3vO9QZjPBdNRrphb-2rxLohxO58bCWizOV1INc93nI8rOkhnUiIZHlAP8OfvbKH2ztREaI3gal1bl_YohruXmaWj0F4Jd3PcIuIr1LdhMnt7tWNWeRiqopQZiMd67Zc77CVA-p8nx8_Skqv_daObpCBu9erQgf3Qbw5bGlXpwglfsLEU7aQjPzUBFdaFU9wBPeDRXfLl1VMwA3-7NVHMijmI5ZN-1LU9BLDHFfn7tQzGF5fMWnqlio0Ipc3seJ5qe8mI"/>
+</div>
+<div class="text-[10px] text-primary font-bold uppercase tracking-tighter">Элитная экипировка</div>
+<div class="font-bold uppercase text-xs tracking-tighter line-clamp-2 text-black">Шлем Precision-Fit X3</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-gray-100 border-t-2 border-gray-300">
+<div class="max-w-[1440px] mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+<div>
+<span class="text-lg font-black text-blue-950 font-lexend uppercase tracking-tighter">POWERPLAY HOCKEY</span>
+<p class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 mt-4">© 2024 POWERPLAY HOCKEY. ЭКИПИРОВКА ДЛЯ ЛЬДА.</p>
+</div>
+<div class="flex flex-wrap gap-8 md:justify-end">
+<a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all" href="#">Гарантия</a>
+<a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all" href="#">Доставка и возврат</a>
+<a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all" href="#">Таблицы размеров</a>
+<a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all" href="#">Командные заказы</a>
+<a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all" href="#">Контакты</a>
+</div>
+</div>
+</footer>
+</body>
+</html>
