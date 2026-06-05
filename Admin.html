@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>POWERPLAY HOCKEY | Панель Администратора</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 text-on-surface min-h-screen flex flex-col font-sans">
+    
+    <header class="bg-primary text-white border-b-4 border-secondary sticky top-0 z-50">
+        <div class="flex justify-between items-center h-16 px-8 max-w-[1600px] mx-auto w-full">
+            <div class="text-xl font-black italic font-lexend uppercase tracking-tighter flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary">admin_panel_settings</span>
+                POWERPLAY HOCKEY ADMIN
+            </div>
+            <div class="flex items-center gap-6 text-sm font-bold uppercase tracking-widest">
+                <a href="Main.html" class="hover:text-secondary transition-colors">Вернуться на сайт</a>
+                <button onclick="window.location.href='Auth.html'" class="hover:text-secondary flex items-center gap-1">
+                    Выйти <span class="material-symbols-outlined text-gray-400">exit_to_app</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-1 max-w-[1600px] mx-auto w-full">
+        <aside class="w-64 bg-white border-r border-gray-300 flex flex-col pt-8 min-h-[calc(100vh-64px)] shadow-sm">
+            <nav class="flex flex-col gap-2 px-4" id="admin-nav">
+                <button data-target="view-orders" class="nav-btn w-full flex items-center gap-3 px-4 py-3 bg-secondary text-white font-bold uppercase tracking-widest text-sm transition-colors text-left">
+                    <span class="material-symbols-outlined">receipt_long</span> Заказы
+                </button>
+                <button data-target="view-products" class="nav-btn w-full flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-100 font-bold uppercase tracking-widest text-sm transition-colors text-left">
+                    <span class="material-symbols-outlined">inventory_2</span> Товары
+                </button>
+                <button data-target="view-clients" class="nav-btn w-full flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-100 font-bold uppercase tracking-widest text-sm transition-colors text-left">
+                    <span class="material-symbols-outlined">group</span> Клиенты
+                </button>
+                <button data-target="view-settings" class="nav-btn w-full flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-100 font-bold uppercase tracking-widest text-sm transition-colors text-left">
+                    <span class="material-symbols-outlined">settings</span> Настройки
+                </button>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-8 relative">
+            <div id="view-orders" class="view-section block">
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="font-lexend text-3xl font-black uppercase text-primary">Управление заказами</h1>
+                    <button onclick="fetchOrders()" class="bg-primary text-white px-4 py-2 text-sm font-bold uppercase hover:bg-zinc-800 transition-colors flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">refresh</span> Обновить
+                    </button>
+                </div>
+                <div class="bg-white border border-gray-300 shadow-sm overflow-hidden">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-gray-50 border-b border-gray-300">
+                            <tr>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500">ID</th>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500">Дата</th>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500">Клиент</th>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500">Сумма</th>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500">Статус</th>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500 text-right">Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-table-body" class="divide-y divide-gray-200"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="view-products" class="view-section hidden">
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="font-lexend text-3xl font-black uppercase text-primary">Склад и товары</h1>
+                    <button onclick="openModal('modal-add-product')" class="bg-secondary text-white px-4 py-2 text-sm font-bold uppercase hover:bg-red-800 transition-colors flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">add</span> Добавить товар
+                    </button>
+                </div>
+                <div class="bg-white border border-gray-300 shadow-sm overflow-hidden">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-gray-50 border-b border-gray-300">
+                            <tr>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500">ID</th>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500">Наименование</th>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500">Бренд / Размер</th>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500">Остаток</th>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500">Цена</th>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500 text-right">Управление</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-table-body" class="divide-y divide-gray-200"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="view-clients" class="view-section hidden">
+                <h1 class="font-lexend text-3xl font-black uppercase text-primary mb-6">База клиентов</h1>
+                <div class="bg-white border border-gray-300 shadow-sm overflow-hidden">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-gray-50 border-b border-gray-300">
+                            <tr>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500">ID</th>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500">ФИО</th>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500">Телефон</th>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500">Email</th>
+                                <th class="px-6 py-4 font-bold text-xs uppercase tracking-widest text-gray-500">Город</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clients-table-body" class="divide-y divide-gray-200"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="view-settings" class="view-section hidden">
+                <h1 class="font-lexend text-3xl font-black uppercase text-primary mb-6">Настройки системы</h1>
+                <div class="bg-white border border-gray-300 p-8 shadow-sm max-w-2xl">
+                    <p class="text-gray-600 mb-6">Основные конфигурации интернет-магазина POWERPLAY HOCKEY.</p>
+                    <div class="flex flex-col gap-4">
+                        <label class="flex items-center gap-3">
+                            <input type="checkbox" checked class="text-secondary focus:ring-secondary cursor-pointer w-5 h-5"/>
+                            <span class="font-bold">Принимать новые заказы</span>
+                        </label>
+                        <label class="flex items-center gap-3">
+                            <input type="checkbox" checked class="text-secondary focus:ring-secondary cursor-pointer w-5 h-5"/>
+                            <span class="font-bold">Включить уведомления на почту администратора</span>
+                        </label>
+                        <button class="bg-primary text-white py-3 px-6 font-bold uppercase mt-4 self-start hover:bg-zinc-800">Сохранить</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="modal-add-product" class="fixed inset-0 bg-black/60 z-[100] hidden items-center justify-center backdrop-blur-sm">
+        <div class="bg-white p-8 max-w-lg w-full shadow-2xl">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="font-lexend text-2xl font-bold uppercase text-primary">Добавить товар</h2>
+                <button onclick="closeModal('modal-add-product')" class="text-gray-400 hover:text-red-600"><span class="material-symbols-outlined">close</span></button>
+            </div>
+            <form id="form-add-product" class="flex flex-col gap-4">
+                <input id="prod-name" type="text" placeholder="Название товара" required class="border p-3">
+                <div class="grid grid-cols-2 gap-4">
+                    <input id="prod-price" type="number" step="0.01" placeholder="Цена (BYN)" required class="border p-3">
+                    <input id="prod-qty" type="number" placeholder="Остаток (шт)" required class="border p-3">
+                </div>
+                <input id="prod-size" type="text" placeholder="Размер / Flex" required class="border p-3">
+                <button type="submit" class="bg-secondary text-white py-4 font-bold uppercase hover:bg-red-800 mt-2">Сохранить в базу</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-order-details" class="fixed inset-0 bg-black/60 z-[100] hidden items-center justify-center backdrop-blur-sm">
+        <div class="bg-white p-8 max-w-2xl w-full shadow-2xl">
+            <div class="flex justify-between items-center mb-6 border-b pb-4">
+                <h2 class="font-lexend text-2xl font-bold uppercase text-primary" id="detail-title">Заказ #</h2>
+                <button onclick="closeModal('modal-order-details')" class="text-gray-400 hover:text-red-600"><span class="material-symbols-outlined">close</span></button>
+            </div>
+            <div id="order-items-list" class="flex flex-col gap-3 mb-6 max-h-60 overflow-y-auto"></div>
+            <button onclick="closeModal('modal-order-details')" class="w-full bg-primary text-white py-3 font-bold uppercase hover:bg-zinc-800">Закрыть</button>
+        </div>
+    </div>
+
+    <script>
+        const navButtons = document.querySelectorAll('.nav-btn');
+        const sections = document.querySelectorAll('.view-section');
+
+        navButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                navButtons.forEach(b => b.className = "nav-btn w-full flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-100 font-bold uppercase tracking-widest text-sm transition-colors text-left");
+                btn.className = "nav-btn w-full flex items-center gap-3 px-4 py-3 bg-secondary text-white font-bold uppercase tracking-widest text-sm transition-colors text-left";
+                
+                sections.forEach(sec => sec.classList.add('hidden'));
+                document.getElementById(btn.dataset.target).classList.remove('hidden');
+
+                if(btn.dataset.target === 'view-orders') fetchOrders();
+                if(btn.dataset.target === 'view-products') fetchProducts();
+                if(btn.dataset.target === 'view-clients') fetchClients();
+            });
+        });
+
+        function openModal(id) { document.getElementById(id).classList.replace('hidden', 'flex'); }
+        function closeModal(id) { document.getElementById(id).classList.replace('flex', 'hidden'); }
+
+        async function fetchOrders() {
+            try {
+                const res = await fetch('http://localhost:3000/api/admin/orders');
+                const orders = await res.json();
+                const tbody = document.getElementById('orders-table-body');
+                tbody.innerHTML = '';
+                if (!orders.length) return tbody.innerHTML = '<tr><td colspan="6" class="p-6 text-center">Нет заказов</td></tr>';
+
+                orders.forEach(o => {
+                    const statusColors = o.Status_FK === 4 ? 'bg-green-100 text-green-800' : (o.Status_FK === 5 ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800');
+                    tbody.innerHTML += `
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-bold text-sm">#PW-${o.ID_Zakaza}</td>
+                            <td class="px-6 py-4 text-sm text-gray-600">${new Date(o.Data_zakaza).toLocaleDateString()}</td>
+                            <td class="px-6 py-4 text-sm">${o.FIO || 'Аноним'}</td>
+                            <td class="px-6 py-4 font-lexend font-bold text-secondary">${(o.TotalSum || 0).toFixed(2)} BYN</td>
+                            <td class="px-6 py-4">
+                                <select onchange="updateOrderStatus(${o.ID_Zakaza}, this.value)" class="text-xs font-bold uppercase rounded border-0 ${statusColors} focus:ring-0 cursor-pointer">
+                                    <option value="1" ${o.Status_FK==1?'selected':''}>Новый</option>
+                                    <option value="2" ${o.Status_FK==2?'selected':''}>В обработке</option>
+                                    <option value="3" ${o.Status_FK==3?'selected':''}>Отправлен</option>
+                                    <option value="4" ${o.Status_FK==4?'selected':''}>Доставлен</option>
+                                    <option value="5" ${o.Status_FK==5?'selected':''}>Отменен</option>
+                                </select>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <button onclick="viewOrderDetails(${o.ID_Zakaza})" class="text-blue-600 hover:underline font-bold text-xs uppercase">Детали</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } catch (e) { console.error(e); }
+        }
+
+        async function updateOrderStatus(id, newStatus) {
+            await fetch(`http://localhost:3000/api/admin/orders/${id}/status`, {
+                method: 'PUT', headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ status_id: newStatus })
+            });
+            fetchOrders();
+        }
+
+        async function viewOrderDetails(id) {
+            const res = await fetch(`http://localhost:3000/api/admin/orders/${id}`);
+            const items = await res.json();
+            document.getElementById('detail-title').innerText = `Заказ #PW-${id}`;
+            const list = document.getElementById('order-items-list');
+            list.innerHTML = items.map(i => `
+                <div class="flex justify-between border-b pb-2">
+                    <span class="font-bold">${i.Naimenovanie}</span>
+                    <span>${i.Kolvo_tovara} шт. x ${(i.Summa/i.Kolvo_tovara).toFixed(2)} BYN</span>
+                </div>
+            `).join('');
+            openModal('modal-order-details');
+        }
+
+        async function fetchProducts() {
+            try {
+                const res = await fetch('http://localhost:3000/api/tovar');
+                const prods = await res.json();
+                const tbody = document.getElementById('products-table-body');
+                tbody.innerHTML = '';
+                prods.forEach(p => {
+                    tbody.innerHTML += `
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-bold text-sm text-gray-500">${p.ID_Tovara}</td>
+                            <td class="px-6 py-4 text-sm font-bold">${p.Naimenovanie}</td>
+                            <td class="px-6 py-4 text-sm text-gray-600">${p.Razmer || '-'}</td>
+                            <td class="px-6 py-4 text-sm font-bold ${p.Kolichestvo>0?'text-green-600':'text-red-600'}">${p.Kolichestvo} шт</td>
+                            <td class="px-6 py-4 font-lexend font-bold">${p.Cena} BYN</td>
+                            <td class="px-6 py-4 text-right">
+                                <button onclick="deleteProduct(${p.ID_Tovara})" class="text-red-600 hover:underline font-bold text-xs uppercase">Удалить</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } catch (e) { console.error(e); }
+        }
+
+        document.getElementById('form-add-product').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                Naimenovanie: document.getElementById('prod-name').value,
+                Cena: document.getElementById('prod-price').value,
+                Kolichestvo: document.getElementById('prod-qty').value,
+                Razmer: document.getElementById('prod-size').value
+            };
+            await fetch('http://localhost:3000/api/tovar', {
+                method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
+            });
+            closeModal('modal-add-product');
+            e.target.reset();
+            fetchProducts();
+        });
+
+        async function deleteProduct(id) {
+            if(!confirm('Удалить товар?')) return;
+            await fetch(`http://localhost:3000/api/admin/products/${id}`, {method: 'DELETE'});
+            fetchProducts();
+        }
+
+        async function fetchClients() {
+            try {
+                const res = await fetch('http://localhost:3000/api/admin/clients');
+                const clients = await res.json();
+                const tbody = document.getElementById('clients-table-body');
+                tbody.innerHTML = clients.map(c => `
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 font-bold text-sm text-gray-500">${c.ID_Polzovatelya}</td>
+                        <td class="px-6 py-4 text-sm font-bold">${c.FIO || '-'}</td>
+                        <td class="px-6 py-4 text-sm">${c.Telefon || '-'}</td>
+                        <td class="px-6 py-4 text-sm text-blue-600">${c.Email || '-'}</td>
+                        <td class="px-6 py-4 text-sm">${c.Adres || '-'}</td>
+                    </tr>
+                `).join('');
+            } catch (e) { console.error(e); }
+        }
+
+        fetchOrders();
+    </script>
+</body>
+</html>
