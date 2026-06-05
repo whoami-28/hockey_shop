@@ -1,171 +1,88 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script src="tailwind-config.js"></script>
-<link rel="stylesheet" href="style.css"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Корзина | POWERPLAY HOCKEY</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="bg-surface text-on-surface min-h-screen">
-<header class="bg-white border-b-2 border-gray-200 sticky top-0 z-50">
-<nav class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto w-full">
-<a href="Main.html" class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter">
+    <header class="bg-white border-b-2 border-gray-200 sticky top-0 z-50">
+        <nav class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto w-full">
+            <a href="Main.html" class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter">
                 POWERPLAY HOCKEY
-</a>
-<div class="hidden md:flex items-center gap-2">
-<a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150" href="Catalog.html">Коньки</a>
-<a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150" href="Catalog.html">Клюшки</a>
-<a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150" href="Catalog.html">Защита</a>
-<a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150" href="Catalog.html">Шлемы</a>
-<a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150" href="Catalog.html">Вратарь</a>
-<a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150" href="Catalog.html">Одежда</a>
-</div>
-<div class="flex items-center gap-6">
-<a href="ShopingCart.html" class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">shopping_cart</a>
-<a href="UserProfile.html" class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">account_circle</a>
-</div>
-</nav>
-</header>
-<main class="max-w-[1440px] mx-auto px-8 py-16">
-<div class="flex flex-col gap-3 mb-12">
-<h1 class="font-lexend text-5xl font-bold uppercase text-primary">Корзина</h1>
-<p class="text-gray-500 text-lg">Проверьте свой арсенал перед выходом на лед.</p>
-</div>
-<div class="grid grid-cols-12 gap-8 items-start">
-<div class="col-span-12 lg:col-span-8 flex flex-col gap-6">
-<div class="bg-white border border-gray-300 p-6 flex flex-col md:flex-row gap-6 items-center group transition-all duration-150 hover:shadow-md">
-<div class="w-full md:w-48 h-48 bg-gray-100 flex items-center justify-center overflow-hidden border border-gray-100">
-<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLodIXy6mKN3U0tfqicjxCszZ30HZzzDjigvhdE7po237sQGHovVpLwpm0FSN9v1-Vp6lDRxeMPEGrEBoqKP9gXGA0yqzXKaIvWlCTQAwd4bJRxmMN8ncCUmcJ6tmB5kuVKR5oxIJRt5ScQppLmQQ3FvelpNPWcm9CanAN3VTkGbiLBZn5JzBxj53psySP3GKOOMNSE0cJCdjcw2LKCTkHXRVHYwJiabk6t17-QPCDQfBI06QxsxrRn_S6_2WwgiEdejTWRn3f51I"/>
-</div>
-<div class="flex-1 flex flex-col gap-2 w-full">
-<div class="flex justify-between items-start">
-<div>
-<span class="bg-primary text-white text-xs font-bold px-2 py-1 mb-2 inline-block uppercase">Carbon Fiber</span>
-<a href="Card.html" class="hover:underline"><h3 class="font-lexend text-2xl font-bold text-primary">КОНЬКИ VAPOR ELITE PRO</h3></a>
-<p class="text-xs text-gray-500 font-bold uppercase tracking-widest">Размер: 9.5D | Лезвие: LS5 Carbon</p>
-</div>
-<p class="font-lexend text-2xl font-bold text-secondary">3040 BYN</p>
-</div>
-<div class="flex items-center justify-between mt-6">
-<div class="flex items-center border border-gray-300">
-<button class="w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition-colors"><span class="material-symbols-outlined text-sm">remove</span></button>
-<span class="w-12 text-center font-bold">1</span>
-<button class="w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition-colors"><span class="material-symbols-outlined text-sm">add</span></button>
-</div>
-<button class="flex items-center gap-2 text-gray-500 hover:text-secondary transition-colors font-bold text-sm">
-<span class="material-symbols-outlined text-lg">delete</span> УДАЛИТЬ
-</button>
-</div>
-</div>
-</div>
-<div class="bg-white border border-gray-300 p-6 flex flex-col md:flex-row gap-6 items-center group transition-all duration-150 hover:shadow-md">
-<div class="w-full md:w-48 h-48 bg-gray-100 flex items-center justify-center overflow-hidden border border-gray-100">
-<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmW-68uuuwMLR5Jbx2LZ5kBluFWPT5JB4cdZITJSZc5dlsMshS5LNvXs7FyJ2HsS8EtBCk9OrcGp_gofdi0rY4zzVYuGCCtlcjfxd3zFx4jeyUIweBTBKdo7nA5q37X599u5vtEY_R3NbZJ-mHp5B7Uapr0niYlc-3njtF1VI0to6Wp2-czi1pHdIYtXZnF5w8uCXGgHMK_RO12Zn106ag7sQK1iDAdGj-RVze0wt5dKRjLiSfYrFjBnskIX_7vSXR_l8V5t0czTw"/>
-</div>
-<div class="flex-1 flex flex-col gap-2 w-full">
-<div class="flex justify-between items-start">
-<div>
-<span class="bg-secondary text-white text-xs font-bold px-2 py-1 mb-2 inline-block uppercase">Распродажа</span>
-<a href="Card.html" class="hover:underline"><h3 class="font-lexend text-2xl font-bold text-primary">КЛЮШКА NEXUS GEO GRIP</h3></a>
-<p class="text-xs text-gray-500 font-bold uppercase tracking-widest">Флекс: 85 | Загиб: P92 | Хват: Левый</p>
-</div>
-<div class="text-right">
-<p class="font-lexend text-2xl font-bold text-secondary">928 BYN</p>
-<p class="text-xs text-gray-500 line-through">1120 BYN</p>
-</div>
-</div>
-<div class="flex items-center justify-between mt-6">
-<div class="flex items-center border border-gray-300">
-<button class="w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition-colors"><span class="material-symbols-outlined text-sm">remove</span></button>
-<span class="w-12 text-center font-bold">2</span>
-<button class="w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition-colors"><span class="material-symbols-outlined text-sm">add</span></button>
-</div>
-<button class="flex items-center gap-2 text-gray-500 hover:text-secondary transition-colors font-bold text-sm">
-<span class="material-symbols-outlined text-lg">delete</span> УДАЛИТЬ
-</button>
-</div>
-</div>
-</div>
-<div class="bg-blue-950 p-12 text-white flex justify-between items-center relative overflow-hidden">
-<div class="relative z-10">
-<h4 class="font-lexend text-2xl font-bold mb-2 uppercase">Вооружитесь и сэкономьте</h4>
-<p class="opacity-80 max-w-md text-base">Добавьте в корзину любой комплект защиты и получите скидку 15% на всю экипировку.</p>
-<button class="mt-6 bg-secondary text-white px-6 py-3 font-bold uppercase tracking-widest hover:bg-red-700 transition-all transform hover:scale-105">Комплекты</button>
-</div>
-<div class="hidden md:block opacity-20 transform scale-150 rotate-12">
-<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">shield</span>
-</div>
-</div>
-</div>
-<aside class="col-span-12 lg:col-span-4 lg:sticky lg:top-24">
-<div class="bg-white border-2 border-primary p-8 flex flex-col gap-6">
-<h2 class="font-lexend text-2xl font-bold uppercase text-primary border-b border-gray-300 pb-6">Ваш заказ</h2>
-<div class="flex flex-col gap-3">
-<div class="flex justify-between text-base">
-<span>Итого (3 Товара)</span>
-<span class="font-bold">4896 BYN</span>
-</div>
-<div class="flex justify-between text-base">
-<span>Доставка</span>
-<span class="text-secondary font-bold">БЕСПЛАТНО</span>
-</div>
-<div class="flex justify-between text-base">
-<span>Налог</span>
-<span class="font-bold">392 BYN</span>
-</div>
-</div>
-<div class="bg-gray-100 p-6 flex flex-col gap-3">
-<p class="font-bold uppercase text-xs tracking-widest">Промокод</p>
-<div class="flex gap-2">
-<input class="flex-1 bg-white border border-gray-300 px-3 py-2 font-bold focus:ring-0 focus:border-primary" placeholder="ВВЕДИТЕ КОД" type="text"/>
-<button class="bg-primary text-white px-6 py-2 font-bold uppercase hover:bg-gray-800 transition-colors">Применить</button>
-</div>
-</div>
-<div class="border-t-2 border-primary pt-6 mt-3">
-<div class="flex justify-between items-end">
-<span class="font-lexend text-2xl font-bold">ВСЕГО</span>
-<span class="font-lexend text-4xl font-bold text-primary">5288 BYN</span>
-</div>
-</div>
-<a href="Checkout.html" class="w-full bg-secondary text-white py-6 font-lexend text-xl font-bold uppercase tracking-tighter hover:bg-red-900 transition-all transform active:scale-95 shadow-lg text-center block">
-Оформить заказ
-</a>
-<div class="flex flex-col gap-2 mt-6">
-<p class="text-xs text-center text-gray-500 uppercase font-medium">Безопасная оплата</p>
-<div class="flex justify-center gap-3 opacity-50 grayscale hover:grayscale-0 transition-all">
-<span class="material-symbols-outlined">credit_card</span>
-<span class="material-symbols-outlined">account_balance_wallet</span>
-<span class="material-symbols-outlined">contactless</span>
-</div>
-</div>
-</div>
-<div class="mt-6 bg-white border border-gray-300 p-6 flex items-center gap-6">
-<div class="w-12 h-12 bg-gray-100 flex items-center justify-center rounded-full">
-<span class="material-symbols-outlined text-primary">support_agent</span>
-</div>
-<div>
-<p class="font-bold text-sm uppercase">Нужен совет?</p>
-<p class="text-xs text-gray-500">Наши эксперты готовы помочь.</p>
-<a class="text-secondary font-bold text-xs uppercase underline decoration-2 underline-offset-4" href="#">Написать в чат</a>
-</div>
-</div>
-</aside>
-</div>
-</main>
-<footer class="bg-gray-100 border-t-2 border-gray-300 mt-20">
-<div class="max-w-[1440px] mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-<div>
-<div class="text-lg font-black text-blue-950 font-lexend uppercase tracking-tighter mb-4">POWERPLAY HOCKEY</div>
-<p class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500">© 2024 POWERPLAY HOCKEY. ЭКИПИРОВКА ДЛЯ ЛЬДА.</p>
-</div>
-<div class="flex flex-wrap gap-6 md:justify-end">
-<a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all" href="#">Гарантия</a>
-<a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all" href="#">Доставка и возврат</a>
-<a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all" href="#">Размеры</a>
-<a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all" href="#">Командам</a>
-<a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all" href="#">Контакты</a>
-</div>
-</div>
-</footer>
-</body></html>
+            </a>
+            <div class="hidden md:flex items-center gap-2">
+                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
+                    href="Catalog.html">Каталог</a>
+                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-secondary bg-red-50 transition-all duration-150"
+                    href="SizeGuide.html">Умный подбор</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="ShopingCart.html"
+                    class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">shopping_cart</a>
+                <a href="UserProfile.html"
+                    class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">account_circle</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-[1440px] mx-auto px-8 py-16">
+        <h1 class="font-lexend text-5xl font-bold uppercase text-primary mb-12">Корзина</h1>
+        <div id="cart-items" class="grid grid-cols-12 gap-8 items-start">
+        </div>
+    </main>
+
+    <script>
+        function renderCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const container = document.getElementById('cart-items');
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="col-span-12 text-center text-xl">Корзина пуста</p>';
+                return;
+            }
+
+            let total = 0;
+            let itemsHtml = '<div class="col-span-12 lg:col-span-8 flex flex-col gap-6">';
+
+            cart.forEach((item, index) => {
+                total += item.price * item.quantity;
+                itemsHtml += `
+                    <div class="bg-white border border-gray-300 p-6 flex justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-xl">${item.name}</h3>
+                            <p>${item.quantity} шт. x ${item.price} BYN</p>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-secondary hover:underline">Удалить</button>
+                    </div>
+                `;
+            });
+            itemsHtml += '</div>';
+
+            itemsHtml += `
+                <aside class="col-span-12 lg:col-span-4 bg-white border-2 border-primary p-8">
+                    <h2 class="text-2xl font-bold mb-6 font-lexend">ИТОГО: ${total.toFixed(2)} BYN</h2>
+                    <a href="Checkout.html" class="block w-full bg-secondary text-white py-4 text-center font-bold uppercase hover:bg-red-800 transition-all">Оформить заказ</a>
+                </aside>
+            `;
+
+            container.innerHTML = itemsHtml;
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart'));
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        renderCart();
+    </script>
+</body>
+
+</html>

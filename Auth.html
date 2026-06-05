@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>POWERPLAY HOCKEY | Авторизация</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+    <header class="bg-white border-b-2 border-gray-200 sticky top-0 z-50">
+        <nav class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto w-full">
+            <a href="Main.html" class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter">
+                POWERPLAY HOCKEY
+            </a>
+            <div class="hidden md:flex items-center gap-2">
+                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
+                    href="Catalog.html">Коньки</a>
+                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
+                    href="Catalog.html">Клюшки</a>
+                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
+                    href="Catalog.html">Защита</a>
+                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
+                    href="Catalog.html">Шлемы</a>
+                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
+                    href="Catalog.html">Вратарь</a>
+                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
+                    href="Catalog.html">Одежда</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="ShopingCart.html"
+                    class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">shopping_cart</a>
+                <a href="Auth.html" class="material-symbols-outlined text-secondary font-bold inline-block"
+                    style="font-variation-settings: 'FILL' 1;">account_circle</a>
+            </div>
+        </nav>
+    </header>
+    <main class="flex-1 w-full max-w-[1440px] mx-auto px-8 py-16 flex items-center justify-center">
+        <div class="w-full max-w-md bg-white border border-gray-300 p-8 shadow-sm">
+            <div class="flex gap-4 mb-8 border-b border-gray-200 pb-4">
+                <button id="tab-login"
+                    class="flex-1 font-lexend text-xl font-bold uppercase text-primary border-b-2 border-primary pb-2 transition-colors">Вход</button>
+                <button id="tab-register"
+                    class="flex-1 font-lexend text-xl font-bold uppercase text-gray-400 hover:text-primary transition-colors pb-2">Регистрация</button>
+            </div>
+
+            <form id="form-login" class="flex flex-col gap-6" action="UserProfile.html">
+                <div class="flex flex-col gap-2">
+                    <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Логин / Email</label>
+                    <input type="email" required
+                        class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"
+                        placeholder="user@hockeypro.by" />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Пароль</label>
+                    <input type="password" required
+                        class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"
+                        placeholder="••••••••••••" />
+                </div>
+                <button type="submit"
+                    class="w-full bg-primary text-white py-4 font-lexend text-lg font-bold uppercase tracking-tighter hover:bg-zinc-800 transition-all transform active:scale-95 mt-2">
+                    Войти
+                </button>
+                <div class="text-center mt-4">
+                    <a href="#"
+                        class="text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-secondary underline decoration-2 underline-offset-4 transition-colors">
+                        Забыли пароль? Восстановить через Email
+                    </a>
+                </div>
+            </form>
+
+            <form id="form-register" class="hidden flex-col gap-6" action="UserProfile.html">
+                <div class="flex flex-col gap-2">
+                    <label class="text-xs font-bold uppercase tracking-widest text-gray-500">ФИО</label>
+                    <input type="text" required
+                        class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"
+                        placeholder="Иванов Иван Иванович" />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Email</label>
+                    <input type="email" required
+                        class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"
+                        placeholder="user@hockeypro.by" />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Телефон</label>
+                    <input type="tel" required
+                        class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"
+                        placeholder="+375 (__) ___-__-__" />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Пароль</label>
+                    <input type="password" required
+                        class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"
+                        placeholder="••••••••••••" />
+                </div>
+                <div class="flex items-start gap-3 mt-2">
+                    <input type="checkbox" id="consent" required
+                        class="mt-1 border-gray-300 text-secondary focus:ring-secondary cursor-pointer" />
+                    <label for="consent" class="text-xs text-gray-600 leading-tight cursor-pointer">
+                        Я даю информированное согласие на обработку моих персональных данных в соответствии с Законом РБ
+                        от 07.05.2021 № 99-З.
+                    </label>
+                </div>
+                <button type="submit"
+                    class="w-full bg-secondary text-white py-4 font-lexend text-lg font-bold uppercase tracking-tighter hover:bg-red-800 transition-all transform active:scale-95 mt-2">
+                    Зарегистрироваться
+                </button>
+            </form>
+        </div>
+    </main>
+    <footer class="bg-gray-100 border-t-2 border-gray-300">
+        <div class="max-w-[1440px] mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            <div>
+                <div class="text-lg font-black text-blue-950 font-lexend uppercase tracking-tighter mb-4">POWERPLAY
+                    HOCKEY</div>
+                <p class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500">© 2024 POWERPLAY
+                    HOCKEY. ЭКИПИРОВКА ДЛЯ ЛЬДА.</p>
+            </div>
+            <div class="flex flex-wrap gap-6 md:justify-end">
+                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
+                    href="#">Гарантия</a>
+                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
+                    href="#">Доставка и возврат</a>
+                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
+                    href="#">Размеры</a>
+                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
+                    href="#">Командам</a>
+                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
+                    href="#">Контакты</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const tabLogin = document.getElementById('tab-login');
+        const tabRegister = document.getElementById('tab-register');
+        const formLogin = document.getElementById('form-login');
+        const formRegister = document.getElementById('form-register');
+
+        function activateTab(activeTab, activeForm, inactiveTab, inactiveForm) {
+            activeTab.classList.remove('text-gray-400');
+            activeTab.classList.add('text-primary', 'border-b-2', 'border-primary');
+
+            inactiveTab.classList.remove('text-primary', 'border-b-2', 'border-primary');
+            inactiveTab.classList.add('text-gray-400');
+
+            activeForm.classList.remove('hidden');
+            activeForm.classList.add('flex');
+
+            inactiveForm.classList.remove('flex');
+            inactiveForm.classList.add('hidden');
+        }
+
+        tabLogin.addEventListener('click', () => activateTab(tabLogin, formLogin, tabRegister, formRegister));
+        tabRegister.addEventListener('click', () => activateTab(tabRegister, formRegister, tabLogin, formLogin));
+    </script>
+</body>
+
+</html>

@@ -1,272 +1,101 @@
 <!DOCTYPE html>
 <html class="light" lang="ru">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script src="tailwind-config.js"></script>
-<link rel="stylesheet" href="style.css"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="bg-white text-black antialiased">
-<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
-<div class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto w-full">
-<a href="Main.html" class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter">
+    <header class="bg-white border-b-2 border-gray-200 sticky top-0 z-50">
+        <nav class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto w-full">
+            <a href="Main.html" class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter">
                 POWERPLAY HOCKEY
-</a>
-<nav class="hidden lg:flex items-center space-x-8 h-full">
-<a class="text-gray-600 font-bold hover:text-red-600 font-lexend uppercase tracking-tighter transition-all duration-150" href="Catalog.html">Коньки</a>
-<a class="text-blue-950 border-b-4 border-blue-950 pb-1 font-lexend font-bold uppercase tracking-tighter" href="Catalog.html">Клюшки</a>
-<a class="text-gray-600 font-bold hover:text-red-600 font-lexend uppercase tracking-tighter transition-all duration-150" href="Catalog.html">Защита</a>
-<a class="text-gray-600 font-bold hover:text-red-600 font-lexend uppercase tracking-tighter transition-all duration-150" href="Catalog.html">Шлемы</a>
-<a class="text-gray-600 font-bold hover:text-red-600 font-lexend uppercase tracking-tighter transition-all duration-150" href="Catalog.html">Вратарь</a>
-<a class="text-gray-600 font-bold hover:text-red-600 font-lexend uppercase tracking-tighter transition-all duration-150" href="Catalog.html">Одежда</a>
-</nav>
-<div class="flex items-center space-x-6">
-<div class="relative hidden xl:block">
-<input class="bg-surface-container border border-outline-variant px-4 py-2 text-sm w-64 focus:outline-none focus:border-primary transition-colors" placeholder="ПОИСК ЭКИПИРОВКИ..." type="text"/>
-<span class="material-symbols-outlined absolute right-3 top-2 text-gray-400">search</span>
-</div>
-<a href="ShopingCart.html" class="hover:bg-gray-50 transition-all duration-150 p-2 scale-95 active:opacity-80 inline-block">
-<span class="material-symbols-outlined">shopping_cart</span>
-</a>
-<a href="UserProfile.html" class="hover:bg-gray-50 transition-all duration-150 p-2 scale-95 active:opacity-80 inline-block">
-<span class="material-symbols-outlined">account_circle</span>
-</a>
-</div>
-</div>
-</header>
-<main class="max-w-[1440px] mx-auto px-8 py-12">
-<div class="mb-12">
-<h1 class="font-lexend text-6xl text-primary uppercase mb-2 font-black tracking-tighter">Композитные клюшки</h1>
-<p class="text-lg text-gray-600 max-w-2xl">Высокоточные инструменты для элитных плеймейкеров. От молниеносных бросков с нижней точкой прогиба до мощных щелчков со средней — найдите свое преимущество на льду.</p>
-</div>
-<div class="flex flex-col lg:flex-row gap-8">
-<aside class="w-full lg:w-72 flex-shrink-0 space-y-8">
-<div class="border-b border-gray-300 pb-4 mb-4 flex justify-between items-center">
-<h3 class="font-bold uppercase">Фильтры</h3>
-<button class="text-secondary text-sm uppercase font-bold hover:underline">Сбросить все</button>
-</div>
-<div class="space-y-4">
-<h4 class="font-bold uppercase">Бренд</h4>
-<div class="space-y-2">
-<label class="flex items-center group cursor-pointer">
-<input class="rounded-none border-gray-400 text-secondary focus:ring-secondary w-5 h-5 mr-3" type="checkbox"/>
-<span class="text-base group-hover:text-secondary transition-colors">BAUER</span>
-</label>
-<label class="flex items-center group cursor-pointer">
-<input class="rounded-none border-gray-400 text-secondary focus:ring-secondary w-5 h-5 mr-3" type="checkbox"/>
-<span class="text-base group-hover:text-secondary transition-colors">CCM</span>
-</label>
-<label class="flex items-center group cursor-pointer">
-<input class="rounded-none border-gray-400 text-secondary focus:ring-secondary w-5 h-5 mr-3" type="checkbox"/>
-<span class="text-base group-hover:text-secondary transition-colors">WARRIOR</span>
-</label>
-<label class="flex items-center group cursor-pointer">
-<input class="rounded-none border-gray-400 text-secondary focus:ring-secondary w-5 h-5 mr-3" type="checkbox"/>
-<span class="text-base group-hover:text-secondary transition-colors">TRUE</span>
-</label>
-<label class="flex items-center group cursor-pointer">
-<input class="rounded-none border-gray-400 text-secondary focus:ring-secondary w-5 h-5 mr-3" type="checkbox"/>
-<span class="text-base group-hover:text-secondary transition-colors">SHERWOOD</span>
-</label>
-</div>
-</div>
-<div class="space-y-4">
-<h4 class="font-bold uppercase">Флекс (Жесткость)</h4>
-<div class="grid grid-cols-3 gap-2">
-<button class="border border-gray-300 py-2 font-bold hover:border-secondary transition-colors">65</button>
-<button class="border border-gray-300 py-2 font-bold hover:border-secondary transition-colors">70</button>
-<button class="border border-secondary bg-secondary text-white py-2 font-bold">75</button>
-<button class="border border-gray-300 py-2 font-bold hover:border-secondary transition-colors">85</button>
-<button class="border border-gray-300 py-2 font-bold hover:border-secondary transition-colors">95</button>
-<button class="border border-gray-300 py-2 font-bold hover:border-secondary transition-colors">105</button>
-</div>
-</div>
-<div class="space-y-4">
-<h4 class="font-bold uppercase">Загиб (Pattern)</h4>
-<select class="w-full border-gray-300 rounded-none focus:ring-secondary focus:border-secondary text-base">
-<option>Все загибы</option>
-<option>P92 (McDavid/Crosby)</option>
-<option>P28 (Eichel/Giroux)</option>
-<option>P88 (Kane)</option>
-<option>P90TM</option>
-</select>
-</div>
-<div class="space-y-4">
-<h4 class="font-bold uppercase">Цена</h4>
-<div class="space-y-4">
-<input class="w-full h-1 bg-gray-200 appearance-none accent-secondary" max="1500" min="300" type="range"/>
-<div class="flex justify-between items-center font-bold">
-<span>320 BYN</span>
-<span>1300+ BYN</span>
-</div>
-</div>
-</div>
-<div class="bg-primary-container p-6 border-l-4 border-secondary text-white">
-<p class="font-bold mb-2 uppercase text-white/70">Командные заказы</p>
-<p class="text-xl font-bold mb-4 font-lexend">Экипировка оптом для вашей команды.</p>
-<a class="text-secondary font-bold uppercase text-sm tracking-widest hover:underline" href="#">Оставить заявку →</a>
-</div>
-</aside>
-<div class="flex-grow">
-<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
-<p class="text-base text-gray-600"><span class="font-bold text-primary">24</span> клюшки найдено</p>
-<div class="flex items-center space-x-4">
-<span class="font-bold uppercase">Сортировка:</span>
-<select class="border-gray-300 rounded-none bg-transparent py-1 pr-8 text-base">
-<option>Сначала новые</option>
-<option>Цена: по убыванию</option>
-<option>Цена: по возрастанию</option>
-<option>Сначала популярные</option>
-</select>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-<div class="group relative bg-white border border-gray-200 hover:border-primary transition-all duration-300">
-<div class="absolute top-4 left-4 z-10 flex flex-col gap-2">
-<span class="bg-primary text-white text-xs px-3 py-1 uppercase font-bold">Elite Уровень</span>
-<span class="bg-secondary text-white text-xs px-3 py-1 uppercase font-bold">Новинка</span>
-</div>
-<a href="Card.html" class="aspect-[4/5] bg-gray-100 relative overflow-hidden block">
-<img alt="Bauer Hockey Stick" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFvGAx_fxGQv1hfyoYj6Jd3aQYfHkvd7t2CSYVpNl2_P6DRRfNYYTlUfJEDHVinB6ZvAfpjW4UW6DUnyLqi4wVnr3HtlppzMTKFK71i26j1vI_a96l0qCg7zD-F1AqZ_Lks8pN8ji4UpLzv7-MBS78RzxWfWsMVOXSVBtdbm5KJI55b4z-mr2IGFpLmlrgfprvMvNVBWQehDQL6lTYSE6juixgu4HV-dWy2M_-wCf9ezZ2_JEXvzXQlykyVdoRprSEbHB2ZkswBP0"/>
-</a>
-<div class="p-6">
-<p class="text-xs text-gray-500 uppercase mb-1 tracking-widest font-bold">Bauer</p>
-<a href="Card.html" class="hover:underline"><h3 class="text-2xl font-bold text-primary mb-2 group-hover:text-secondary transition-colors font-lexend">Vapor Hyperlite 2</h3></a>
-<div class="flex justify-between items-end">
-<p class="text-2xl font-bold text-primary font-lexend">1120 BYN</p>
-<a href="ShopingCart.html" class="bg-secondary text-white px-4 py-2 font-bold uppercase hover:bg-red-700 transition-all scale-100 hover:scale-105 active:scale-95 inline-block">В корзину</a>
-</div>
-</div>
-</div>
-<div class="group relative bg-white border border-gray-200 hover:border-primary transition-all duration-300">
-<div class="absolute top-4 left-4 z-10 flex flex-col gap-2">
-<span class="bg-primary text-white text-xs px-3 py-1 uppercase font-bold">Pro Stock</span>
-</div>
-<a href="Card.html" class="aspect-[4/5] bg-gray-100 relative overflow-hidden block">
-<img alt="CCM Hockey Stick" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgvRGAARQ4YkA965Wbfae9CTlFlE79wv72ZSuH8_Vk2NTv8Eq9-Y5cdGEtuThANnpIxfdHaKQKSBQ3PS5HMd5KBqPhHPw9VMYdWHAYjPBUNav1nH1-R0j7-2JYC4owDEuT4EecxYIkSo9DvN4udKNJxwcHB2o2C8hjg4XLm6DxJwPcX4QTQxvD_K1jHGp1GzSUYKjhMksIBZR-xhq32385LdFwjs9h-1OAc8QPUEQBsHLVy_KWKdQyu_u5ZOSK2iZkwswVWtInHJI"/>
-</a>
-<div class="p-6">
-<p class="text-xs text-gray-500 uppercase mb-1 tracking-widest font-bold">CCM</p>
-<a href="Card.html" class="hover:underline"><h3 class="text-2xl font-bold text-primary mb-2 group-hover:text-secondary transition-colors font-lexend">Jetspeed FT6 Pro</h3></a>
-<div class="flex justify-between items-end">
-<p class="text-2xl font-bold text-primary font-lexend">1088 BYN</p>
-<a href="ShopingCart.html" class="bg-secondary text-white px-4 py-2 font-bold uppercase hover:bg-red-700 transition-all scale-100 hover:scale-105 active:scale-95 inline-block">В корзину</a>
-</div>
-</div>
-</div>
-<div class="group relative bg-white border border-gray-200 hover:border-primary transition-all duration-300">
-<div class="absolute top-4 left-4 z-10">
-<span class="bg-secondary text-white text-xs px-3 py-1 uppercase font-bold">Распродажа</span>
-</div>
-<a href="Card.html" class="aspect-[4/5] bg-gray-100 relative overflow-hidden block">
-<img alt="Warrior Hockey Stick" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDftojap4sWQLxutN_Y40_t25pIwIzAC-YnSl-jWd_6agr5zKdW-Aj3UfNin7p9JsKFVl3faBbRtY_0bKT-1tYonjd3Ch3xP3sbzJS4EmG7lQSkUW_f_6UaizlgfFliCiHPV-vEdM5trZOggQXaHV78ABUiKf5fdhZnVU2b732wt0EMwUwv1xhYIejXHuU_rhTprvYHW5BExRLPf5_RlAI9Az4QHH7pTdc_Gvwee0QwPBnBWRzjfAYPPaFcYORpzWPUmRRxs_7Jaac"/>
-</a>
-<div class="p-6">
-<p class="text-xs text-gray-500 uppercase mb-1 tracking-widest font-bold">Warrior</p>
-<a href="Card.html" class="hover:underline"><h3 class="text-2xl font-bold text-primary mb-2 group-hover:text-secondary transition-colors font-lexend">Alpha LX2 Pro</h3></a>
-<div class="flex justify-between items-end">
-<div>
-<p class="text-xs text-red-600 line-through font-bold">1024 BYN</p>
-<p class="text-2xl font-bold text-primary font-lexend">832 BYN</p>
-</div>
-<a href="ShopingCart.html" class="bg-secondary text-white px-4 py-2 font-bold uppercase hover:bg-red-700 transition-all scale-100 hover:scale-105 active:scale-95 inline-block">В корзину</a>
-</div>
-</div>
-</div>
-<div class="group relative bg-white border border-gray-200 hover:border-primary transition-all duration-300">
-<a href="Card.html" class="aspect-[4/5] bg-gray-100 relative overflow-hidden block">
-<img alt="True Hockey Stick" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG7Uur3fYMEWmndKZ5-blV6NWxve5I_FqfIP-o820tfSuUcHpClmKoZdKG_jpI8MhAre43tAwdwXFdB9P79rPhJrDA9guTVKi2bojxHIIk7XNLveWVFc4YjdU_t7tw0cZu7vb1rgJenIKg-BosiqsD89YcJyrH6IRqfrLyPo9jg8GOeWghoZl1XlYWOAFIfldKWCUk38e3-hvmZKoEQXvzDNWHuqj6dKUQNICswcqBBaKtyobAwo0Z-HcKC5vLaa3dNfjm-7HcZ7c"/>
-</a>
-<div class="p-6">
-<p class="text-xs text-gray-500 uppercase mb-1 tracking-widest font-bold">True</p>
-<a href="Card.html" class="hover:underline"><h3 class="text-2xl font-bold text-primary mb-2 group-hover:text-secondary transition-colors font-lexend">Project X</h3></a>
-<div class="flex justify-between items-end">
-<p class="text-2xl font-bold text-primary font-lexend">1152 BYN</p>
-<a href="ShopingCart.html" class="bg-secondary text-white px-4 py-2 font-bold uppercase hover:bg-red-700 transition-all scale-100 hover:scale-105 active:scale-95 inline-block">В корзину</a>
-</div>
-</div>
-</div>
-<div class="group relative bg-white border border-gray-200 hover:border-primary transition-all duration-300">
-<div class="absolute top-4 left-4 z-10 flex flex-col gap-2">
-<span class="bg-primary text-white text-xs px-3 py-1 uppercase font-bold">Carbon Fiber</span>
-</div>
-<a href="Card.html" class="aspect-[4/5] bg-gray-100 relative overflow-hidden block">
-<img alt="Sherwood Hockey Stick" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsaWAbONLnEnEXYF_6r-ddh-y0DSgQ_7Ni9fEip46Mc_UW_1sR4RXh5oV_AlTe2-koViCICcca3OZgPfAcX_lX6dN5apNVzKgCB6Y7PvhZXUOfZEyf6eNAdfp-EzaSGZBr0GxlDbuikqyD4NRlRc2IRSfYKUlNVzZbd6I7CdQJkej6tDOlFGSuvAguQDeVfpWiaf3a8aArdrwedzrLJfZKPH0j2aEolfMvq1zuXUWFjDAWE91kNPQ2EgbUS7heCyhMd1N1E4cqcsk"/>
-</a>
-<div class="p-6">
-<p class="text-xs text-gray-500 uppercase mb-1 tracking-widest font-bold">Sherwood</p>
-<a href="Card.html" class="hover:underline"><h3 class="text-2xl font-bold text-primary mb-2 group-hover:text-secondary transition-colors font-lexend">Rekker Legend Pro</h3></a>
-<div class="flex justify-between items-end">
-<p class="text-2xl font-bold text-primary font-lexend">960 BYN</p>
-<a href="ShopingCart.html" class="bg-secondary text-white px-4 py-2 font-bold uppercase hover:bg-red-700 transition-all scale-100 hover:scale-105 active:scale-95 inline-block">В корзину</a>
-</div>
-</div>
-</div>
-<div class="group relative bg-white border border-gray-200 hover:border-primary transition-all duration-300">
-<div class="absolute top-4 left-4 z-10 flex flex-col gap-2">
-<span class="bg-primary text-white text-xs px-3 py-1 uppercase font-bold">Performance</span>
-</div>
-<a href="Card.html" class="aspect-[4/5] bg-gray-100 relative overflow-hidden block">
-<img alt="Bauer Hockey Stick" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTqXgVmPjmZ5rvBE3T2Q3m8QAhLOCIaj3fVm_jFliON4nI05Pqbw5M_p7LpryvaH9hfgr-DHLABaFG-BJsrDI3dzQ_6d3kSzNLkGeBQD5wowzBkHMIj5cj4rpiH7AVhGZ6a1nQH5x5ShMFm8YMY85V5u0gVjWTGO1VOszlYJ23xpSVsbiaW126A1efSzFR-AgN5pj-p1HrjxG0Vae9MnRjvmMHDoT0p78YfekiF9J0An-liPYf-gJuumI8ZBnf6xK5r6zpeZrm8z0"/>
-</a>
-<div class="p-6">
-<p class="text-xs text-gray-500 uppercase mb-1 tracking-widest font-bold">Bauer</p>
-<a href="Card.html" class="hover:underline"><h3 class="text-2xl font-bold text-primary mb-2 group-hover:text-secondary transition-colors font-lexend">Nexus Sync</h3></a>
-<div class="flex justify-between items-end">
-<p class="text-2xl font-bold text-primary font-lexend">1120 BYN</p>
-<a href="ShopingCart.html" class="bg-secondary text-white px-4 py-2 font-bold uppercase hover:bg-red-700 transition-all scale-100 hover:scale-105 active:scale-95 inline-block">В корзину</a>
-</div>
-</div>
-</div>
-</div>
-<div class="mt-16 flex justify-center items-center space-x-2">
-<button class="w-12 h-12 flex items-center justify-center border border-gray-300 hover:bg-primary hover:text-white transition-colors">
-<span class="material-symbols-outlined">chevron_left</span>
-</button>
-<button class="w-12 h-12 flex items-center justify-center border border-primary bg-primary text-white font-bold">1</button>
-<button class="w-12 h-12 flex items-center justify-center border border-gray-300 hover:bg-primary hover:text-white transition-colors font-bold">2</button>
-<button class="w-12 h-12 flex items-center justify-center border border-gray-300 hover:bg-primary hover:text-white transition-colors font-bold">3</button>
-<button class="w-12 h-12 flex items-center justify-center border border-gray-300 hover:bg-primary hover:text-white transition-colors font-bold">...</button>
-<button class="w-12 h-12 flex items-center justify-center border border-gray-300 hover:bg-primary hover:text-white transition-colors font-bold">8</button>
-<button class="w-12 h-12 flex items-center justify-center border border-gray-300 hover:bg-primary hover:text-white transition-colors">
-<span class="material-symbols-outlined">chevron_right</span>
-</button>
-</div>
-</div>
-</div>
-</main>
-<footer class="bg-gray-100 border-t-2 border-gray-300 mt-20">
-<div class="max-w-[1440px] mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-<div class="space-y-6">
-<div class="text-lg font-black text-blue-950 font-lexend uppercase">POWERPLAY HOCKEY</div>
-<p class="text-sm text-gray-500 max-w-sm tracking-wider leading-relaxed">
-                    © 2024 POWERPLAY HOCKEY. ЭЛИТНАЯ ЭКИПИРОВКА ДЛЯ НАСТОЯЩИХ СПОРТСМЕНОВ.
-                </p>
-<div class="flex space-x-6">
-<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-secondary">social_leaderboard</span>
-<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-secondary">close</span>
-<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-secondary">video_library</span>
-</div>
-</div>
-<div class="grid grid-cols-2 gap-8">
-<div class="space-y-4">
-<h5 class="font-lexend font-bold text-primary uppercase text-sm tracking-widest border-b border-gray-300 pb-2">Поддержка</h5>
-<ul class="space-y-2">
-<li><a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 transition-all hover:underline decoration-2 underline-offset-4" href="#">Гарантия</a></li>
-<li><a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 transition-all hover:underline decoration-2 underline-offset-4" href="#">Доставка и возврат</a></li>
-<li><a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 transition-all hover:underline decoration-2 underline-offset-4" href="#">Таблицы размеров</a></li>
-</ul>
-</div>
-<div class="space-y-4">
-<h5 class="font-lexend font-bold text-primary uppercase text-sm tracking-widest border-b border-gray-300 pb-2">Компания</h5>
-<ul class="space-y-2">
-<li><a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 transition-all hover:underline decoration-2 underline-offset-4" href="#">Командные заказы</a></li>
-<li><a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 transition-all hover:underline decoration-2 underline-offset-4" href="#">Контакты</a></li>
-</ul>
-</div>
-</div>
-</div>
-</footer>
+            </a>
+            <div class="hidden md:flex items-center gap-2">
+                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
+                    href="Catalog.html">Каталог</a>
+                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-secondary bg-red-50 transition-all duration-150"
+                    href="SizeGuide.html">Умный подбор</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="ShopingCart.html"
+                    class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">shopping_cart</a>
+                <a href="UserProfile.html"
+                    class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">account_circle</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-[1440px] mx-auto px-8 py-12">
+        <div class="mb-12">
+            <h1 class="font-lexend text-6xl text-primary uppercase mb-2 font-black tracking-tighter">Композитные клюшки
+            </h1>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <aside class="w-full lg:w-72 flex-shrink-0 space-y-8">
+                <h4 class="font-bold uppercase">Бренд</h4>
+            </aside>
+
+            <div class="flex-grow">
+                <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    <p>Загрузка товаров...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        async function loadProducts() {
+            try {
+                const response = await fetch('http://localhost:3000/api/tovar');
+                const products = await response.json();
+                const grid = document.getElementById('product-grid');
+                grid.innerHTML = '';
+
+                products.forEach(product => {
+                    const card = `
+                    <div class="group relative bg-white border border-gray-200 hover:border-primary transition-all duration-300">
+                        <div class="aspect-[4/5] bg-gray-100 relative overflow-hidden block">
+                            <img class="w-full h-full object-cover mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFvGAx_fxGQv1hfyoYj6Jd3aQYfHkvd7t2CSYVpNl2_P6DRRfNYYTlUfJEDHVinB6ZvAfpjW4UW6DUnyLqi4wVnr3HtlppzMTKFK71i26j1vI_a96l0qCg7zD-F1AqZ_Lks8pN8ji4UpLzv7-MBS78RzxWfWsMVOXSVBtdbm5KJI55b4z-mr2IGFpLmlrgfprvMvNVBWQehDQL6lTYSE6juixgu4HV-dWy2M_-wCf9ezZ2_JEXvzXQlykyVdoRprSEbHB2ZkswBP0" alt="${product.Naimenovanie}"/>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-primary mb-2 font-lexend">${product.Naimenovanie}</h3>
+                            <div class="flex justify-between items-end">
+                                <p class="text-2xl font-bold text-primary font-lexend">${product.Cena} BYN</p>
+                                <button onclick="addToCart(${product.ID_Tovara}, '${product.Naimenovanie}', ${product.Cena})" 
+                                        class="bg-secondary text-white px-4 py-2 font-bold uppercase hover:bg-red-700 transition-all">
+                                    В корзину
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                    grid.innerHTML += card;
+                });
+            } catch (error) {
+                console.error('Ошибка загрузки:', error);
+            }
+        }
+
+        function addToCart(id, name, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id, name, price, quantity: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(name + ' добавлен в корзину!');
+        }
+
+        loadProducts();
+    </script>
 </body>
+
 </html>

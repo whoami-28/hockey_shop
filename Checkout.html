@@ -1,218 +1,442 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>POWERPLAY HOCKEY | Оформление заказа</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script src="tailwind-config.js"></script>
-<link rel="stylesheet" href="style.css"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>POWERPLAY HOCKEY | Оформление заказа</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
 </head>
+
 <body class="bg-surface text-on-surface min-h-screen relative">
-<header class="bg-white border-b-2 border-gray-200 sticky top-0 z-50">
-<nav class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto w-full">
-<a href="Main.html" class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter">
+    <header class="bg-white border-b-2 border-gray-200 sticky top-0 z-50">
+        <nav class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto w-full">
+            <a href="Main.html" class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter">
                 POWERPLAY HOCKEY
-</a>
-<div class="hidden md:flex items-center gap-2">
-<a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150" href="Catalog.html">Коньки</a>
-<a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150" href="Catalog.html">Клюшки</a>
-<a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150" href="Catalog.html">Защита</a>
-<a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150" href="Catalog.html">Шлемы</a>
-<a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150" href="Catalog.html">Вратарь</a>
-<a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150" href="Catalog.html">Одежда</a>
-</div>
-<div class="flex items-center gap-6">
-<a href="ShopingCart.html" class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">shopping_cart</a>
-<a href="UserProfile.html" class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">account_circle</a>
-</div>
-</nav>
-</header>
-<main class="max-w-[1440px] mx-auto px-8 py-16">
-<div class="flex flex-col gap-3 mb-12">
-<nav class="flex items-center gap-2 text-xs text-gray-500 uppercase tracking-widest font-bold mb-4">
-<a class="hover:text-secondary" href="ShopingCart.html">Корзина</a>
-<span class="material-symbols-outlined text-[16px]">chevron_right</span>
-<span class="text-black">Оформление заказа</span>
-</nav>
-<h1 class="font-lexend text-5xl font-bold uppercase text-primary">Оформление заказа</h1>
-</div>
-<form id="checkout-form" class="grid grid-cols-12 gap-8 items-start">
-<div class="col-span-12 lg:col-span-8 flex flex-col gap-8">
-<div class="bg-white border border-gray-300 p-8">
-<h2 class="font-lexend text-2xl font-bold uppercase text-primary mb-6">Контактная информация</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="flex flex-col gap-2">
-<label class="text-xs font-bold uppercase tracking-widest text-gray-500">Email</label>
-<input type="email" required class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium" placeholder="ваша@почта.com"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-xs font-bold uppercase tracking-widest text-gray-500">Телефон</label>
-<input type="tel" required class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium" placeholder="+375 (__) ___-__-__"/>
-</div>
-</div>
-</div>
-<div class="bg-white border border-gray-300 p-8">
-<h2 class="font-lexend text-2xl font-bold uppercase text-primary mb-6">Адрес доставки</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-<div class="flex flex-col gap-2">
-<label class="text-xs font-bold uppercase tracking-widest text-gray-500">Имя</label>
-<input type="text" required class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-xs font-bold uppercase tracking-widest text-gray-500">Фамилия</label>
-<input type="text" required class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"/>
-</div>
-</div>
-<div class="flex flex-col gap-2 mb-6">
-<label class="text-xs font-bold uppercase tracking-widest text-gray-500">Улица, дом, квартира</label>
-<input type="text" required class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium" placeholder="Например: ул. Ленина, д. 10, кв. 5"/>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="flex flex-col gap-2">
-<label class="text-xs font-bold uppercase tracking-widest text-gray-500">Город</label>
-<input type="text" required class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-xs font-bold uppercase tracking-widest text-gray-500">Почтовый индекс</label>
-<input type="text" required class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"/>
-</div>
-</div>
-</div>
-<div class="bg-white border border-gray-300 p-8">
-<h2 class="font-lexend text-2xl font-bold uppercase text-primary mb-6">Оплата</h2>
-<div class="flex gap-4 mb-6">
-<label class="flex-1 border border-primary p-4 cursor-pointer flex items-center justify-center gap-2 bg-gray-50">
-<input type="radio" name="payment" checked class="text-secondary focus:ring-secondary"/>
-<span class="font-bold uppercase text-sm">Банковская карта</span>
-</label>
-<label class="flex-1 border border-gray-300 p-4 cursor-pointer flex items-center justify-center gap-2 hover:border-primary transition-colors">
-<input type="radio" name="payment" class="text-secondary focus:ring-secondary"/>
-<span class="font-bold uppercase text-sm">ЕРИП</span>
-</label>
-</div>
-<div class="flex flex-col gap-6">
-<div class="flex flex-col gap-2">
-<label class="text-xs font-bold uppercase tracking-widest text-gray-500">Номер карты</label>
-<div class="relative">
-<input type="text" required class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium" placeholder="0000 0000 0000 0000"/>
-<span class="material-symbols-outlined absolute right-3 top-3 text-gray-400">credit_card</span>
-</div>
-</div>
-<div class="grid grid-cols-2 gap-6">
-<div class="flex flex-col gap-2">
-<label class="text-xs font-bold uppercase tracking-widest text-gray-500">Срок действия</label>
-<input type="text" required class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium" placeholder="ММ / ГГ"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-xs font-bold uppercase tracking-widest text-gray-500">CVC / CVV</label>
-<input type="text" required class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium" placeholder="123"/>
-</div>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-xs font-bold uppercase tracking-widest text-gray-500">Имя на карте</label>
-<input type="text" required class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium uppercase"/>
-</div>
-</div>
-</div>
-</div>
-<aside class="col-span-12 lg:col-span-4 lg:sticky lg:top-24">
-<div class="bg-white border-2 border-primary p-8 flex flex-col gap-6">
-<h2 class="font-lexend text-2xl font-bold uppercase text-primary border-b border-gray-300 pb-6">Ваш заказ</h2>
-<div class="flex flex-col gap-4">
-<div class="flex justify-between items-center gap-4">
-<div class="w-16 h-16 bg-gray-100 flex-shrink-0">
-<img class="w-full h-full object-cover mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLodIXy6mKN3U0tfqicjxCszZ30HZzzDjigvhdE7po237sQGHovVpLwpm0FSN9v1-Vp6lDRxeMPEGrEBoqKP9gXGA0yqzXKaIvWlCTQAwd4bJRxmMN8ncCUmcJ6tmB5kuVKR5oxIJRt5ScQppLmQQ3FvelpNPWcm9CanAN3VTkGbiLBZn5JzBxj53psySP3GKOOMNSE0cJCdjcw2LKCTkHXRVHYwJiabk6t17-QPCDQfBI06QxsxrRn_S6_2WwgiEdejTWRn3f51I"/>
-</div>
-<div class="flex-1">
-<p class="font-bold text-sm uppercase leading-tight line-clamp-2 text-primary">КОНЬКИ VAPOR ELITE PRO</p>
-<p class="text-xs text-gray-500 font-bold mt-1">КОЛ-ВО: 1</p>
-</div>
-<p class="font-lexend font-bold text-secondary">3040 BYN</p>
-</div>
-<div class="flex justify-between items-center gap-4">
-<div class="w-16 h-16 bg-gray-100 flex-shrink-0">
-<img class="w-full h-full object-cover mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmW-68uuuwMLR5Jbx2LZ5kBluFWPT5JB4cdZITJSZc5dlsMshS5LNvXs7FyJ2HsS8EtBCk9OrcGp_gofdi0rY4zzVYuGCCtlcjfxd3zFx4jeyUIweBTBKdo7nA5q37X599u5vtEY_R3NbZJ-mHp5B7Uapr0niYlc-3njtF1VI0to6Wp2-czi1pHdIYtXZnF5w8uCXGgHMK_RO12Zn106ag7sQK1iDAdGj-RVze0wt5dKRjLiSfYrFjBnskIX_7vSXR_l8V5t0czTw"/>
-</div>
-<div class="flex-1">
-<p class="font-bold text-sm uppercase leading-tight line-clamp-2 text-primary">КЛЮШКА NEXUS GEO GRIP</p>
-<p class="text-xs text-gray-500 font-bold mt-1">КОЛ-ВО: 2</p>
-</div>
-<p class="font-lexend font-bold text-secondary">1856 BYN</p>
-</div>
-</div>
-<div class="border-t border-gray-300 pt-6 mt-2">
-<div class="flex flex-col gap-3">
-<div class="flex justify-between text-base">
-<span class="text-gray-600">Сумма заказа</span>
-<span class="font-bold">4896 BYN</span>
-</div>
-<div class="flex justify-between text-base">
-<span class="text-gray-600">Доставка</span>
-<span class="text-secondary font-bold">БЕСПЛАТНО</span>
-</div>
-<div class="flex justify-between text-base">
-<span class="text-gray-600">Налог</span>
-<span class="font-bold">392 BYN</span>
-</div>
-</div>
-</div>
-<div class="border-t-2 border-primary pt-6 mt-3">
-<div class="flex justify-between items-end">
-<span class="font-lexend text-2xl font-bold">ИТОГО К ОПЛАТЕ</span>
-<span class="font-lexend text-4xl font-bold text-primary">5288 BYN</span>
-</div>
-</div>
-<button type="submit" id="submit-btn" class="w-full bg-secondary text-white py-6 font-lexend text-xl font-bold uppercase tracking-tighter hover:bg-red-900 transition-all transform active:scale-95 shadow-lg text-center inline-block">
-Оплатить заказ
-</button>
-<div class="flex flex-col gap-2 mt-6">
-<p class="text-xs text-center text-gray-500 uppercase font-medium flex items-center justify-center gap-1">
-<span class="material-symbols-outlined text-[16px]">lock</span> Безопасное соединение
-</p>
-</div>
-</div>
-</aside>
-</form>
-</main>
-<footer class="bg-gray-100 border-t-2 border-gray-300 mt-20">
-<div class="max-w-[1440px] mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-<div>
-<div class="text-lg font-black text-blue-950 font-lexend uppercase tracking-tighter mb-4">POWERPLAY HOCKEY</div>
-<p class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500">© 2024 POWERPLAY HOCKEY. ЭКИПИРОВКА ДЛЯ ЛЬДА.</p>
-</div>
-<div class="flex flex-wrap gap-6 md:justify-end">
-<a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all" href="#">Гарантия</a>
-<a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all" href="#">Доставка и возврат</a>
-<a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all" href="#">Размеры</a>
-<a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all" href="#">Командам</a>
-<a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all" href="#">Контакты</a>
-</div>
-</div>
-</footer>
-<div id="success-modal" class="fixed inset-0 bg-black/50 z-[100] hidden items-center justify-center backdrop-blur-sm">
-<div class="bg-white p-12 text-center max-w-md w-full mx-4 border-t-4 border-secondary">
-<span class="material-symbols-outlined text-6xl text-green-600 mb-4 block">check_circle</span>
-<h2 class="font-lexend text-3xl font-bold uppercase mb-2">Заказ оформлен!</h2>
-<p class="text-gray-600 mb-8">Номер заказа: #PW-990219-Y. Ожидайте перенаправления в личный кабинет...</p>
-<div class="w-8 h-8 border-4 border-secondary border-t-transparent rounded-full animate-spin mx-auto"></div>
-</div>
-</div>
-<script>
-document.getElementById('checkout-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submit-btn');
-    btn.textContent = 'ОБРАБОТКА...';
-    btn.disabled = true;
-    btn.classList.add('opacity-50', 'cursor-not-allowed');
-    setTimeout(() => {
-        document.getElementById('success-modal').classList.remove('hidden');
-        document.getElementById('success-modal').classList.add('flex');
-        setTimeout(() => {
-            window.location.href = 'UserProfile.html';
-        }, 3000);
-    }, 1500);
-});
-</script>
+            </a>
+            <div class="hidden md:flex items-center gap-2">
+                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
+                    href="Catalog.html">Каталог</a>
+                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-secondary bg-red-50 transition-all duration-150"
+                    href="SizeGuide.html">Умный подбор</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="ShopingCart.html"
+                    class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">shopping_cart</a>
+                <a href="UserProfile.html"
+                    class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">account_circle</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-[1440px] mx-auto px-8 py-16">
+        <div class="flex flex-col gap-3 mb-12">
+            <nav class="flex items-center gap-2 text-xs text-gray-500 uppercase tracking-widest font-bold mb-4">
+                <a class="hover:text-secondary" href="ShopingCart.html">Корзина</a>
+                <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                <span class="text-black">Оформление заказа</span>
+            </nav>
+            <h1 class="font-lexend text-5xl font-bold uppercase text-primary">Оформление заказа</h1>
+        </div>
+
+        <form id="checkout-form" class="grid grid-cols-12 gap-8 items-start">
+            <div class="col-span-12 lg:col-span-8 flex flex-col gap-8">
+                <div class="bg-white border border-gray-300 p-8 shadow-sm">
+                    <h2 class="font-lexend text-2xl font-bold uppercase text-primary mb-6">Контактная информация</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Email</label>
+                            <input id="email" type="email" required
+                                class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"
+                                placeholder="ваша@почта.com" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Телефон</label>
+                            <input id="phone" type="tel" required
+                                class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"
+                                placeholder="+375 (__) ___-__-__" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-300 p-8 shadow-sm">
+                    <h2 class="font-lexend text-2xl font-bold uppercase text-primary mb-6">Адрес доставки</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Имя</label>
+                            <input id="name" type="text" required
+                                class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Фамилия</label>
+                            <input id="surname" type="text" required
+                                class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2 mb-6">
+                        <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Улица, дом,
+                            квартира</label>
+                        <input id="address" type="text" required
+                            class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"
+                            placeholder="Например: ул. Ленина, д. 10, кв. 5" />
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Город</label>
+                            <input id="city" type="text" required
+                                class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Почтовый
+                                индекс</label>
+                            <input id="zip" type="text" required
+                                class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-300 p-8 shadow-sm">
+                    <h2 class="font-lexend text-2xl font-bold uppercase text-primary mb-6">Оплата</h2>
+                    <div class="flex gap-4 mb-6">
+                        <label
+                            class="flex-1 border border-primary p-4 cursor-pointer flex items-center justify-center gap-2 bg-gray-50">
+                            <input type="radio" name="payment" checked class="text-secondary focus:ring-secondary" />
+                            <span class="font-bold uppercase text-sm">Банковская карта</span>
+                        </label>
+                    </div>
+                    <div class="flex flex-col gap-6">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Номер карты</label>
+                            <div class="relative">
+                                <input id="card-number" type="text" required
+                                    class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium outline-none transition-colors"
+                                    placeholder="0000 0000 0000 0000" maxlength="19" />
+                                <span
+                                    class="material-symbols-outlined absolute right-3 top-3 text-gray-400">credit_card</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Срок
+                                    действия</label>
+                                <input id="card-expiry" type="text" required
+                                    class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium outline-none transition-colors"
+                                    placeholder="ММ / ГГ" maxlength="7" />
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-gray-500">CVC /
+                                    CVV</label>
+                                <input id="card-cvc" type="password" required
+                                    class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium outline-none transition-colors"
+                                    placeholder="123" maxlength="3" />
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Имя на
+                                карте</label>
+                            <input id="card-name" type="text" required
+                                class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium uppercase" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="col-span-12 lg:col-span-4 lg:sticky lg:top-24">
+                <div class="bg-white border-2 border-primary p-8 flex flex-col gap-6 shadow-sm">
+                    <h2 class="font-lexend text-2xl font-bold uppercase text-primary border-b border-gray-300 pb-6">Ваш
+                        заказ</h2>
+
+                    <div id="order-items-container" class="flex flex-col gap-4">
+                    </div>
+
+                    <div class="border-t border-gray-300 pt-6 mt-2">
+                        <div class="flex flex-col gap-3">
+                            <div class="flex justify-between text-base">
+                                <span class="text-gray-600">Сумма заказа</span>
+                                <span id="subtotal" class="font-bold">0.00 BYN</span>
+                            </div>
+                            <div class="flex justify-between text-base">
+                                <span class="text-gray-600">Доставка</span>
+                                <span class="text-secondary font-bold">БЕСПЛАТНО</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t-2 border-primary pt-6 mt-3">
+                        <div class="flex justify-between items-end">
+                            <span class="font-lexend text-2xl font-bold">ИТОГО</span>
+                            <span id="final-total" class="font-lexend text-3xl font-bold text-primary">0.00 BYN</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submit-btn"
+                        class="w-full bg-secondary text-white py-6 font-lexend text-xl font-bold uppercase tracking-tighter hover:bg-red-800 transition-colors shadow-lg mt-4">
+                        Оплатить заказ
+                    </button>
+                    <div class="flex flex-col gap-2 mt-2">
+                        <p
+                            class="text-xs text-center text-gray-500 uppercase font-medium flex items-center justify-center gap-1">
+                            <span class="material-symbols-outlined text-[16px]">lock</span> 256-bit шифрование
+                        </p>
+                    </div>
+                </div>
+            </aside>
+        </form>
+    </main>
+
+    <div id="payment-overlay"
+        class="fixed inset-0 bg-slate-900/80 z-[100] hidden items-center justify-center backdrop-blur-sm transition-opacity duration-300 opacity-0">
+        <div id="payment-modal"
+            class="bg-white p-10 rounded-2xl max-w-sm w-full mx-4 shadow-2xl flex flex-col items-center text-center transform transition-all duration-300 scale-95">
+            <div id="payment-spinner" class="flex flex-col items-center">
+                <div class="relative w-20 h-20 mb-6">
+                    <div class="absolute inset-0 rounded-full border-4 border-slate-100"></div>
+                    <div
+                        class="absolute inset-0 rounded-full border-4 border-secondary border-t-transparent animate-spin">
+                    </div>
+                    <span
+                        class="material-symbols-outlined absolute inset-0 flex items-center justify-center text-2xl text-secondary animate-pulse">credit_score</span>
+                </div>
+                <h3 class="font-lexend text-2xl font-bold uppercase mb-2">Обработка</h3>
+                <p class="text-slate-500 text-sm">Связываемся с вашим банком...</p>
+            </div>
+
+            <div id="payment-success" class="hidden flex-col items-center">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                    <span class="material-symbols-outlined text-5xl text-green-600"
+                        style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                </div>
+                <h3 class="font-lexend text-2xl font-bold uppercase mb-2 text-green-600">Оплата прошла!</h3>
+                <p class="text-slate-500 text-sm mb-6">Заказ <span id="order-number-display"
+                        class="font-bold text-slate-900"></span> успешно сформирован.</p>
+                <p class="text-xs text-slate-400 font-bold uppercase tracking-widest animate-pulse">Перенаправление...
+                </p>
+            </div>
+
+            <div id="payment-error" class="hidden flex-col items-center">
+                <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                    <span class="material-symbols-outlined text-5xl text-red-600"
+                        style="font-variation-settings: 'FILL' 1;">error</span>
+                </div>
+                <h3 class="font-lexend text-2xl font-bold uppercase mb-2 text-red-600">Отклонено</h3>
+                <p id="payment-error-msg" class="text-slate-500 text-sm mb-6">Неверные данные карты.</p>
+                <button type="button" id="close-error-btn"
+                    class="w-full py-3 border-2 border-primary text-primary font-bold uppercase hover:bg-primary hover:text-white transition-colors">Вернуться</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-100 border-t-2 border-gray-300 mt-20">
+        <div class="max-w-[1440px] mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            <div>
+                <div class="text-lg font-black text-blue-950 font-lexend uppercase tracking-tighter mb-4">POWERPLAY
+                    HOCKEY</div>
+                <p class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500">© 2024 POWERPLAY
+                    HOCKEY. ЭКИПИРОВКА ДЛЯ ЛЬДА.</p>
+            </div>
+            <div class="flex flex-wrap gap-6 md:justify-end">
+                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
+                    href="#">Гарантия</a>
+                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
+                    href="#">Доставка и возврат</a>
+                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
+                    href="#">Размеры</a>
+                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
+                    href="#">Контакты</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('card-number').addEventListener('input', function (e) {
+            e.target.value = e.target.value.replace(/[^\d]/g, '').replace(/(.{4})/g, '$1 ').trim();
+        });
+
+        document.getElementById('card-expiry').addEventListener('input', function (e) {
+            let val = e.target.value.replace(/[^\d]/g, '');
+            if (val.length > 2) {
+                val = val.substring(0, 2) + ' / ' + val.substring(2, 4);
+            }
+            e.target.value = val;
+        });
+
+        document.getElementById('card-cvc').addEventListener('input', function (e) {
+            e.target.value = e.target.value.replace(/[^\d]/g, '');
+        });
+
+        function validateLuhn(number) {
+            let sum = 0;
+            let alternate = false;
+            for (let i = number.length - 1; i >= 0; i--) {
+                let n = parseInt(number.substring(i, i + 1), 10);
+                if (alternate) {
+                    n *= 2;
+                    if (n > 9) n = (n % 10) + 1;
+                }
+                sum += n;
+                alternate = !alternate;
+            }
+            return (sum % 10 === 0);
+        }
+
+        function validateExpiry(expiry) {
+            const match = expiry.match(/^(0[1-9]|1[0-2]) \/ (\d{2})$/);
+            if (!match) return false;
+            const month = parseInt(match[1], 10);
+            const year = parseInt(match[2], 10) + 2000;
+            const now = new Date();
+            const expiryDate = new Date(year, month - 1);
+            return expiryDate >= new Date(now.getFullYear(), now.getMonth());
+        }
+
+        function renderOrderSummary() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const container = document.getElementById('order-items-container');
+            const submitBtn = document.getElementById('submit-btn');
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 italic">Ваша корзина пуста</p>';
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                return;
+            }
+
+            let total = 0;
+            let itemsHtml = '';
+
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                itemsHtml += `
+                    <div class="flex justify-between items-center gap-4 border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+                        <div class="flex-1">
+                            <p class="font-bold text-sm uppercase leading-tight line-clamp-2 text-primary">${item.name}</p>
+                            <p class="text-xs text-gray-500 font-bold mt-1">КОЛ-ВО: ${item.quantity}</p>
+                        </div>
+                        <p class="font-lexend font-bold text-secondary whitespace-nowrap">${(item.price * item.quantity).toFixed(2)} BYN</p>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = itemsHtml;
+            document.getElementById('subtotal').textContent = total.toFixed(2) + ' BYN';
+            document.getElementById('final-total').textContent = total.toFixed(2) + ' BYN';
+        }
+
+        document.getElementById('checkout-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) return alert("Корзина пуста");
+
+            const cardNumberEl = document.getElementById('card-number');
+            const cardExpiryEl = document.getElementById('card-expiry');
+            const cardCvcEl = document.getElementById('card-cvc');
+
+            const cardNumberRaw = cardNumberEl.value.replace(/\s/g, '');
+            const cardExpiryRaw = cardExpiryEl.value;
+            const cardCvcRaw = cardCvcEl.value;
+
+            cardNumberEl.classList.remove('border-red-500');
+            cardExpiryEl.classList.remove('border-red-500');
+            cardCvcEl.classList.remove('border-red-500');
+
+            let isValid = true;
+
+            if (cardNumberRaw.length < 16 || !validateLuhn(cardNumberRaw)) {
+                cardNumberEl.classList.add('border-red-500');
+                isValid = false;
+            }
+
+            if (!validateExpiry(cardExpiryRaw)) {
+                cardExpiryEl.classList.add('border-red-500');
+                isValid = false;
+            }
+
+            if (cardCvcRaw.length < 3) {
+                cardCvcEl.classList.add('border-red-500');
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            const overlay = document.getElementById('payment-overlay');
+            const modal = document.getElementById('payment-modal');
+            const spinner = document.getElementById('payment-spinner');
+            const successBlock = document.getElementById('payment-success');
+            const errorBlock = document.getElementById('payment-error');
+
+            spinner.classList.remove('hidden'); spinner.classList.add('flex');
+            successBlock.classList.add('hidden'); successBlock.classList.remove('flex');
+            errorBlock.classList.add('hidden'); errorBlock.classList.remove('flex');
+
+            overlay.classList.remove('hidden');
+            setTimeout(() => {
+                overlay.classList.remove('opacity-0');
+                modal.classList.remove('scale-95');
+            }, 10);
+
+            await new Promise(resolve => setTimeout(resolve, 2000));
+
+            if (cardNumberRaw.startsWith('0000')) {
+                spinner.classList.add('hidden'); spinner.classList.remove('flex');
+                errorBlock.classList.remove('hidden'); errorBlock.classList.add('flex');
+                return;
+            }
+
+            const orderData = {
+                id_polzovatelya: 1,
+                status_fk: 1,
+                items: cart.map(item => ({
+                    id_tovara: item.id,
+                    summa: item.price * item.quantity,
+                    kolvo: item.quantity
+                }))
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/api/zakaz', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(orderData)
+                });
+
+                if (response.ok) {
+                    const resData = await response.json();
+
+                    spinner.classList.add('hidden'); spinner.classList.remove('flex');
+                    successBlock.classList.remove('hidden'); successBlock.classList.add('flex');
+
+                    document.getElementById('order-number-display').textContent = '#PW-' + resData.zakazId;
+                    localStorage.removeItem('cart');
+
+                    setTimeout(() => {
+                        window.location.href = 'UserProfile.html';
+                    }, 3000);
+                } else {
+                    throw new Error('Сбой сохранения БД');
+                }
+            } catch (err) {
+                spinner.classList.add('hidden'); spinner.classList.remove('flex');
+                errorBlock.classList.remove('hidden'); errorBlock.classList.add('flex');
+                document.getElementById('payment-error-msg').textContent = 'Ошибка сервера базы данных.';
+            }
+        });
+
+        document.getElementById('close-error-btn').addEventListener('click', () => {
+            const overlay = document.getElementById('payment-overlay');
+            const modal = document.getElementById('payment-modal');
+
+            overlay.classList.add('opacity-0');
+            modal.classList.add('scale-95');
+            setTimeout(() => overlay.classList.add('hidden'), 300);
+        });
+
+        renderOrderSummary();
+    </script>
 </body>
+
 </html>
