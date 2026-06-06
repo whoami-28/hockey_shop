@@ -4,363 +4,147 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>POWERPLAY HOCKEY | Товар</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="tailwind-config.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
 </head>
 
 <body class="bg-background text-on-surface">
-    <header class="bg-white border-b-2 border-gray-200 sticky top-0 z-50">
-        <nav class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto w-full">
-            <a href="Main.html" class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 transition-all duration-300 shadow-sm">
+        <div class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto w-full">
+            <a href="Main.html" class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter transition-transform duration-300 hover:scale-105">
                 POWERPLAY HOCKEY
             </a>
-            <div class="hidden md:flex items-center gap-2">
-                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
-                    href="Catalog.html">Каталог</a>
-                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-secondary bg-red-50 transition-all duration-150"
-                    href="SizeGuide.html">Умный подбор</a>
-            </div>
-            <div class="flex items-center gap-6">
-                <a href="ShopingCart.html"
-                    class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">shopping_cart</a>
-                <a href="UserProfile.html"
-                    class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">account_circle</a>
-            </div>
-        </nav>
-    </header>
-    <main class="max-w-[1440px] mx-auto px-8 py-16">
-        <nav class="mb-8 flex items-center gap-2 text-xs text-gray-500 uppercase tracking-widest font-bold">
-            <a class="hover:text-secondary" href="Main.html">Главная</a>
-            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-            <a class="hover:text-secondary" href="Catalog.html">Клюшки</a>
-            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-            <span class="text-black">VAPOR HYPERLITE 2</span>
-        </nav>
-        <div class="grid grid-cols-12 gap-8 mb-16">
-            <div class="col-span-12 lg:col-span-7 space-y-6">
-                <div class="studio-bg aspect-[4/5] relative overflow-hidden group">
-                    <img alt="Pro Hockey Stick"
-                        class="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4liJbOS-H4jaco32ueE9MaK0rakzbPUGxr9Ae0-fSOx-VZ1BH6d1Z00Xi5AnfWnJ_hWVhH89PL1FsX5I2A1yI5Pd8GfttdsE0st64WiQUgphNkqVjKMmFUCBIef_31jR2yX3F7Uz9C7SuODJxvZ91Q_p3OfVDbRQVsaeIkHSwLZzxNBvGkAGDYvXJgO7GH7MSkgvS6UxowGYKyN29B1iKUD7uGV5PO5UJtVU4YydPvhiDv6lLR3p1_YYGDOlpWU1aV8i54HKyRmA" />
-                    <div class="absolute top-8 left-8">
-                        <span
-                            class="bg-primary text-white px-3 py-1 font-bold text-xs uppercase tracking-tighter">Карбон
-                            Тех</span>
-                    </div>
-                </div>
-                <div class="grid grid-cols-4 gap-4">
-                    <div class="studio-bg aspect-square cursor-pointer border-2 border-primary"><img
-                            class="w-full h-full object-cover mix-blend-multiply"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8XUZabuMR0dKLWfoRxndJ7u2fTkp22kO9VXcTXkiwjy18ovbP3y3gsmq6W_CSUN_QBSIAW0WmO9q9lYAyOFZAjc25ALCnxaurfAkUnnkXSYwyhP0NPAIcSRiKTZUHIo6yUP2mbsocEB_XT4RC7pMSggUTb2afkcMQR5V3a5Z-QmkMYoMaZaBd_vnmTvDNhOsDM1faXXfPbl6cw3X9E3RVbSX-VPmwC5CJbtRjifq0a8uJsPE-dPY-5Ur6GfFd4t7gtRk8q9cTMwc" />
-                    </div>
-                    <div class="studio-bg aspect-square cursor-pointer hover:border-2 border-gray-300"><img
-                            class="w-full h-full object-cover mix-blend-multiply"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDPQKGwYHln_oD89jL5m1KezS7IluZD4r5SiJ7AtpJYpWn2HbtPwQODEI3SxvkCdBeHJjUF-dKjVJ3xqibsrdkQ0WjI7HeXlReh0P_dU43ogimll8yJ8TKsNdRpfxPzyZnwi_Xq-B8bJxRezL3Rz5mySIBU3SZlGrNiXNa51kZFPdycWWHSokMPtNnLF2masKcaBpbHsskoTnxjtesgKzURnv8X8LhLolkVicVBbrm4eNIridE1AdIUZiyIo-WspBr-KhKd9-zSJI" />
-                    </div>
-                    <div class="studio-bg aspect-square cursor-pointer hover:border-2 border-gray-300"><img
-                            class="w-full h-full object-cover mix-blend-multiply"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLgpT0gKsqrXt_2EvP1oYchrImj4thGilNGp7dCLEAypFlZFLw6hMBa1Dp3ep-_jzV9_zTQkL2vwJrXAWrtdrgnPJb5ZbNeKtpQSa-Cnj1ufd2w5TrFyFfuT71Nw0rQuuiVNzNpQ__oMC3K4-NnE_wm3yuccpRcB7Mxsk2JK2eRI9Wql5Qdff6JaCn5FonRC4J-ykj1Qr1RDeGjbp-xei46japI8SYsyNPHRov-XkyMDuiD4GL0PQrc8VjgKDDY3dAwvylfSa97ik" />
-                    </div>
-                    <div class="studio-bg aspect-square cursor-pointer hover:border-2 border-gray-300"><img
-                            class="w-full h-full object-cover mix-blend-multiply"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxFwoE0xrx51yr0QAaWrl_Cq89Sxi3HEoVIsd7fqvZyfXVDeYJTzeuIBArIkKPMxhU-1fbgdZxGO7O1KMhAAaEw7-62j7TgytvPGRTYGH2HP0p7xzc6FBn3ZXWn6xTUWMh56QJZKw-PwYASQDtQKvTtsk1OE-_sz3O4E0eUXxs2CN4uE0DEIopXvr-7R2ZV-JqSzaau5cmhiIv2iDBVt2wWMeb8e6EsaT_kaGEz5TBvu6yH6MwzyFx3W356CvuXmztYkCIN1naItw" />
-                    </div>
-                </div>
-            </div>
-            <div class="col-span-12 lg:col-span-5 space-y-12">
-                <div class="space-y-2">
-                    <h1 class="font-lexend text-5xl uppercase font-black leading-none">VAPOR HYPERLITE 2</h1>
-                    <p class="text-secondary font-bold text-3xl font-lexend">1120 BYN</p>
-                </div>
-                <p class="text-gray-600 max-w-prose text-lg">
-                    Самый быстрый релиз в хоккее. Оптимизированная для быстрых бросков, модель Hyperlite 2 имеет
-                    передовую систему укладки карбона, которая снижает вес до 360 грамм и увеличивает прочность на 15%
-                    по сравнению с предыдущими поколениями.
-                </p>
-                <div class="space-y-6">
-                    <div class="space-y-2">
-                        <label class="font-bold text-xs uppercase tracking-widest text-gray-500">Хват</label>
-                        <div class="flex gap-4">
-                            <button
-                                class="flex-1 py-3 border-2 border-primary font-bold text-sm uppercase tracking-tighter bg-primary text-white">Левый</button>
-                            <button
-                                class="flex-1 py-3 border border-gray-300 font-bold text-sm uppercase tracking-tighter hover:border-primary transition-colors">Правый</button>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex justify-between">
-                            <label class="font-bold text-xs uppercase tracking-widest text-gray-500">Жесткость
-                                (Flex)</label>
-                            <button class="text-secondary font-bold text-xs uppercase underline">Таблица
-                                размеров</button>
-                        </div>
-                        <div class="grid grid-cols-4 gap-4">
-                            <button
-                                class="py-3 border border-gray-300 font-bold text-sm hover:border-primary">70</button>
-                            <button
-                                class="py-3 border-2 border-primary font-bold text-sm bg-primary text-white">77</button>
-                            <button
-                                class="py-3 border border-gray-300 font-bold text-sm hover:border-primary">82</button>
-                            <button
-                                class="py-3 border border-gray-300 font-bold text-sm hover:border-primary">87</button>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="font-bold text-xs uppercase tracking-widest text-gray-500">Загиб (Pattern)</label>
-                        <select
-                            class="w-full h-12 border-gray-300 focus:border-blue-950 font-bold text-sm uppercase tracking-widest">
-                            <option>P92 - MATTHEWS</option>
-                            <option>P88 - KANE</option>
-                            <option>P28 - EICHEL</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="flex gap-4 pt-6">
-                    <a href="ShopingCart.html"
-                        class="flex-[2] bg-secondary hover:bg-red-800 text-white font-lexend text-xl font-bold uppercase py-5 transition-transform active:scale-95 flex items-center justify-center gap-2">
-                        <span class="material-symbols-outlined" data-weight="fill">shopping_cart</span>
-                        В корзину
-                    </a>
-                    <button
-                        class="flex-1 border-2 border-primary hover:bg-primary hover:text-white font-lexend text-xl font-bold uppercase py-5 transition-colors">
-                        <span class="material-symbols-outlined">favorite</span>
-                    </button>
-                </div>
-                <div class="grid grid-cols-2 gap-6 pt-12 border-t border-gray-200">
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary">bolt</span>
-                        <div>
-                            <p class="font-bold text-xs uppercase">Быстрый релиз</p>
-                            <p class="text-[10px] text-gray-500 uppercase">Нижняя точка прогиба</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary">weight</span>
-                        <div>
-                            <p class="font-bold text-xs uppercase">360 Грамм</p>
-                            <p class="text-[10px] text-gray-500 uppercase">Сверхлегкий карбон</p>
-                        </div>
-                    </div>
-                </div>
+            <nav class="hidden lg:flex items-center space-x-8 h-full">
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Коньки</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Клюшки</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Защита</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Шлемы</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Вратарь</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Одежда</a>
+            </nav>
+            <div class="flex items-center space-x-6">
+                <a href="ShopingCart.html" class="relative p-2 scale-100 hover:scale-110 active:scale-95 transition-all text-secondary">
+                    <span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+                    <span id="header-cart-badge" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-white scale-0 transition-transform duration-300">0</span>
+                </a>
+                <a href="UserProfile.html" class="p-2 scale-100 hover:scale-110 active:scale-95 transition-all text-gray-600 hover:text-primary">
+                    <span class="material-symbols-outlined text-[28px]">account_circle</span>
+                </a>
             </div>
         </div>
-        <section class="py-16 border-t border-gray-200">
-            <div class="flex gap-12 border-b border-gray-200 mb-12">
-                <button
-                    class="pb-6 border-b-4 border-secondary text-black font-bold text-sm uppercase tracking-widest">Описание</button>
-                <button
-                    class="pb-6 text-gray-500 hover:text-secondary font-bold text-sm uppercase tracking-widest">Характеристики</button>
-                <button
-                    class="pb-6 text-gray-500 hover:text-secondary font-bold text-sm uppercase tracking-widest">Отзывы
-                    (48)</button>
-            </div>
-            <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-12 md:col-span-8 space-y-6">
-                    <h3 class="font-lexend text-2xl font-bold uppercase">Разработано для элиты</h3>
-                    <p class="text-gray-600 text-lg">Vapor Hyperlite 2 — это не просто клюшка, это продолжение ваших
-                        намерений на льду. Благодаря нашей запатентованной технологии XE Taper, эта клюшка обеспечивает
-                        самую быструю загрузку броска в нашей линейке. Новый ACL 2.0 (Advanced Carbon Layering)
-                        позволяет нам делать стенки тоньше без ущерба для легендарной ударопрочности.</p>
-                    <ul class="space-y-3 mt-4">
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-secondary">check_circle</span>
-                            <span class="text-lg"><strong class="font-bold">XE Taper:</strong> Сниженный вес и
-                                улучшенная скорость релиза.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-secondary">check_circle</span>
-                            <span class="text-lg"><strong class="font-bold">Крюк HyperCore:</strong> Улучшенное чувство
-                                шайбы и "щелчок" на весь срок службы клюшки.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-secondary">check_circle</span>
-                            <span class="text-lg"><strong class="font-bold">Технология MonoComp:</strong> Настоящая
-                                цельная конструкция для стабильной передачи энергии.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="py-16 bg-gray-50 rounded-xl px-8">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="font-lexend text-4xl font-bold uppercase mb-2">Проверено в боях</h2>
-                    <div class="flex items-center gap-1">
-                        <span class="material-symbols-outlined text-secondary"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="ml-3 font-bold text-black">4.9 / 5.0 (48 Отзывов)</span>
-                    </div>
-                </div>
-                <button
-                    class="border-2 border-primary py-3 px-8 font-bold text-sm uppercase hover:bg-primary hover:text-white transition-all">Написать
-                    отзыв</button>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 border border-gray-200">
-                    <div class="flex gap-1 mb-3">
-                        <span class="material-symbols-outlined text-secondary text-sm"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary text-sm"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary text-sm"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary text-sm"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary text-sm"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                    </div>
-                    <p class="font-bold text-black mb-3 italic">"НЕВЕРОЯТНО ЛЕГКАЯ"</p>
-                    <p class="text-gray-600 mb-6 text-sm">"После оригинальной Hyperlite разница в весе реально
-                        ощущается. Точка прогиба резкая, и мой бросок стал значительно быстрее."</p>
-                    <div class="flex items-center gap-3">
-                        <div
-                            class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center font-bold text-xs uppercase">
-                            МК</div>
-                        <span class="text-xs font-bold uppercase">Марк К. - Элитный юниор</span>
-                    </div>
-                </div>
-                <div class="bg-white p-6 border border-gray-200">
-                    <div class="flex gap-1 mb-3">
-                        <span class="material-symbols-outlined text-secondary text-sm"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary text-sm"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary text-sm"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary text-sm"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary text-sm"
-                            style="font-variation-settings: 'FILL' 1;">star_half</span>
-                    </div>
-                    <p class="font-bold text-black mb-3 italic">"ЭЛИТНОЕ ОЩУЩЕНИЕ"</p>
-                    <p class="text-gray-600 mb-6 text-sm">"Отличное чувство шайбы через крюк. Вы всегда знаете, где она
-                        находится. Прочность отличная за первый месяц интенсивной игры."</p>
-                    <div class="flex items-center gap-3">
-                        <div
-                            class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center font-bold text-xs uppercase">
-                            ДС</div>
-                        <span class="text-xs font-bold uppercase">Дэвид С. - Легенда любительской лиги</span>
-                    </div>
-                </div>
-                <div class="bg-white p-6 border border-gray-200">
-                    <div class="flex gap-1 mb-3">
-                        <span class="material-symbols-outlined text-secondary text-sm"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary text-sm"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary text-sm"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary text-sm"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-secondary text-sm"
-                            style="font-variation-settings: 'FILL' 1;">star</span>
-                    </div>
-                    <p class="font-bold text-black mb-3 italic">"СТОИТ КАЖДОЙ КОПЕЙКИ"</p>
-                    <p class="text-gray-600 mb-6 text-sm">"Если вы серьезно относитесь к игре, это отличный инструмент.
-                        Передача энергии безупречна. Лучшая клюшка, которой я пользовался за 10 лет."</p>
-                    <div class="flex items-center gap-3">
-                        <div
-                            class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center font-bold text-xs uppercase">
-                            ДЛ</div>
-                        <span class="text-xs font-bold uppercase">Джейсон Л. - Тренер</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="py-16">
-            <h2 class="font-lexend text-4xl font-bold uppercase mb-12">Дополните свой арсенал</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="group bg-white border border-gray-200 p-4 transition-all hover:border-primary">
-                    <div class="studio-bg aspect-square mb-4 overflow-hidden relative">
-                        <img alt="Related product"
-                            class="w-full h-full object-cover mix-blend-multiply group-hover:scale-110 transition-transform"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZZefcVTuh9EqPSMiumUR-5VNiyUrXjyjexAMiMHdSL8RATMBmylUNuSpnVOd1kzpS3I8KCs4ANJf5MBEqMyIR8u607V5qG2lH7zONwl_moQIQYd8ULzneZLRoedg2Pq9gsWklegPsbRzO9KBquAcGASlS3E0Ac2_ngOfBnyEgfsXq78rLUFi7koAzcRmqukWtpo8LgkPTGuh09JxzPOK2NyNJ4tCLZgHhPJ1oTHDI4V_Od7Lyi-uR9Z8ps2HKGZAPhY4QYJJYZmI" />
-                        <div class="absolute top-2 left-2">
-                            <span class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 uppercase">Pro
-                                Elite</span>
-                        </div>
-                    </div>
-                    <a href="Card.html" class="hover:underline">
-                        <p class="font-bold text-sm uppercase mb-1 tracking-tighter">Коньки Vapor Hyperlite 2</p>
-                    </a>
-                    <p class="font-lexend font-bold text-primary text-xl">3040 BYN</p>
-                </div>
-                <div class="group bg-white border border-gray-200 p-4 transition-all hover:border-primary">
-                    <div class="studio-bg aspect-square mb-4 overflow-hidden relative">
-                        <img alt="Related product"
-                            class="w-full h-full object-cover mix-blend-multiply group-hover:scale-110 transition-transform"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqmJP1wOoUhe-4J3AklqjpdAaaHXN6gU9C2MN4JSc4WGcgmRrXxN26me_CfHAoCu_N6ghzFFaF5hdagjlXkf-trx9T_IyNddTKwlcs0aSCeNewyygszWZQ5NQj48jO3Lrk9Yxd-S_lnUqsMBnJKEkMCClO9vem3BbjQZihLGiVP2tlCqlanILWRPtnsKQQ3k7RGs4ylg0zsRp890KSWznNHZePOVDbVQ4P4vinOxtd_pDVd8bE8609shv2-6_oJULN3i3u5QBoZr4" />
-                        <div class="absolute top-2 left-2">
-                            <span class="bg-secondary text-white text-[10px] font-bold px-2 py-0.5 uppercase">Хит
-                                продаж</span>
-                        </div>
-                    </div>
-                    <a href="Card.html" class="hover:underline">
-                        <p class="font-bold text-sm uppercase mb-1 tracking-tighter">Краги Vapor Pro</p>
-                    </a>
-                    <p class="font-lexend font-bold text-primary text-xl">608 BYN</p>
-                </div>
-                <div class="group bg-white border border-gray-200 p-4 transition-all hover:border-primary">
-                    <div class="studio-bg aspect-square mb-4 overflow-hidden relative">
-                        <img alt="Related product"
-                            class="w-full h-full object-cover mix-blend-multiply group-hover:scale-110 transition-transform"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWda7q0PntGgBgfgmuqos-gFHCZZRg6UPm403nthlTnz-RJaXz4BpGDCxFiImQxaFDfqW72-qNWbbyQgXIKCeC4FWHhl-O3OvL09XFcE-CBZ5U8_cN3_YJUSWEmsgOnqF5HkYtsyWpY3kCV2nTxIInwhYEa-hmJe5aEKFEz1AP7en_cNetFzoEoUtmJwY7FGk69WaJ4fhU4qFQCGDnDMn0AwxPTUkLocnAFikhZcr9gMHNHjU4Oo4rBE3AXYOQKWL1pCyc_RyQKUY" />
-                    </div>
-                    <a href="Card.html" class="hover:underline">
-                        <p class="font-bold text-sm uppercase mb-1 tracking-tighter">Шлем Hyperlite</p>
-                    </a>
-                    <p class="font-lexend font-bold text-primary text-xl">960 BYN</p>
-                </div>
-                <div class="group bg-white border border-gray-200 p-4 transition-all hover:border-primary">
-                    <div class="studio-bg aspect-square mb-4 overflow-hidden relative">
-                        <img alt="Related product"
-                            class="w-full h-full object-cover mix-blend-multiply group-hover:scale-110 transition-transform"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBXO7vmnaDUXaGKtwQLmPRartNfh1zYo4O1RH9E7o_-6LPakun4F4boK1_d1OYhNJFL_kDWY1DOrl3qOu_kwMMAot_RClzDrFKZLm97ag_2730t7uatA4T_BKR0CCrwbpid_lKk6iYFCZDLruwXArFQipwpuU0qK1hdC1WxKpWwIxjzYQjb5MjSFLc1-KUKBZkZM1p7GE1oa5wUNTkcSH-NKSuEUj_OWaDqKfAlIAVoeCRhIC__UZbgkcoCr0kXlUaDM2kf7BSc8o" />
-                    </div>
-                    <a href="Card.html" class="hover:underline">
-                        <p class="font-bold text-sm uppercase mb-1 tracking-tighter">Термобелье Performance</p>
-                    </a>
-                    <p class="font-lexend font-bold text-primary text-xl">240 BYN</p>
-                </div>
-            </div>
-        </section>
+    </header>
+    <main class="max-w-[1440px] mx-auto px-8 py-16" id="product-container">
+        <div class="text-center text-gray-500 py-20">Загрузка товара...</div>
     </main>
-    <footer class="bg-gray-100 border-t-2 border-gray-300">
+
+    <footer class="bg-gray-100 border-t-2 border-gray-300 mt-20">
         <div class="max-w-[1440px] mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-            <div class="space-y-6">
-                <div class="text-lg font-black text-blue-950 font-lexend uppercase">POWERPLAY HOCKEY</div>
-                <p class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500">© 2024 POWERPLAY
+            <div>
+                <span class="text-lg font-black text-blue-950 font-lexend uppercase tracking-tighter">POWERPLAY
+                    HOCKEY</span>
+                <p class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 mt-4">© 2024 POWERPLAY
                     HOCKEY. ЭКИПИРОВКА ДЛЯ ЛЬДА.</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div class="flex flex-col gap-2">
-                    <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
-                        href="#">Гарантия</a>
-                    <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
-                        href="#">Доставка и возврат</a>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
-                        href="#">Таблица размеров</a>
-                    <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
-                        href="#">Командные заказы</a>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
-                        href="#">Контакты</a>
-                </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        async function loadProductDetails() {
+            if (!productId) {
+                document.getElementById('product-container').innerHTML = '<div class="text-center text-red-500 py-20">Товар не найден (отсутствует ID)</div>';
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:3000/api/tovar/${productId}`);
+                if (!response.ok) throw new Error('Товар не найден в базе');
+                const product = await response.json();
+
+                const html = `
+                <nav class="mb-8 flex items-center gap-2 text-xs text-gray-500 uppercase tracking-widest font-bold">
+                    <a class="hover:text-secondary" href="Main.html">Главная</a>
+                    <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    <a class="hover:text-secondary" href="Catalog.html">Каталог</a>
+                    <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    <span class="text-black">${product.Kategoriya_Nazvanie || 'Товар'}</span>
+                </nav>
+
+                <div class="grid grid-cols-12 gap-8 mb-16">
+                    <div class="col-span-12 lg:col-span-7 space-y-6">
+                        <div class="studio-bg aspect-[4/5] relative overflow-hidden flex items-center justify-center border border-gray-200">
+                            <span class="material-symbols-outlined text-9xl text-gray-300">sports_hockey</span>
+                            <div class="absolute top-8 left-8">
+                                <span class="bg-primary text-white px-3 py-1 font-bold text-xs uppercase tracking-tighter">${product.Brend_Naimenovanie || 'PRO'}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-span-12 lg:col-span-5 space-y-12">
+                        <div class="space-y-2">
+                            <p class="text-gray-500 font-bold tracking-widest uppercase text-sm">${product.Model_Naimenovanie || ''}</p>
+                            <h1 class="font-lexend text-5xl uppercase font-black leading-none">${product.Naimenovanie}</h1>
+                            <p class="text-secondary font-bold text-3xl font-lexend mt-4">${product.Cena} BYN</p>
+                        </div>
+                        
+                        <p class="text-gray-600 max-w-prose text-lg leading-relaxed">
+                            ${product.Harakteristiki || 'Описание для данного товара временно отсутствует. Это высококачественная экипировка для профессионалов и любителей хоккея.'}
+                        </p>
+
+                        <div class="space-y-6 bg-gray-50 p-6 border border-gray-200">
+                            <div class="flex justify-between items-center border-b border-gray-200 pb-4">
+                                <span class="font-bold text-xs uppercase tracking-widest text-gray-500">Параметр / Размер</span>
+                                <span class="font-bold text-lg text-primary">${product.Razmer || 'Универсальный'}</span>
+                            </div>
+                            <div class="flex justify-between items-center pb-2">
+                                <span class="font-bold text-xs uppercase tracking-widest text-gray-500">Наличие на складе</span>
+                                <span class="font-bold text-sm ${product.Kolichestvo > 0 ? 'text-green-600' : 'text-red-600'}">
+                                    ${product.Kolichestvo > 0 ? product.Kolichestvo + ' шт.' : 'Нет в наличии'}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 pt-6">
+                            <button onclick="addToCartAndRedirect(${product.ID_Tovara}, '${product.Naimenovanie}', ${product.Cena})" 
+                                    ${product.Kolichestvo <= 0 ? 'disabled' : ''}
+                                    class="flex-[2] ${product.Kolichestvo > 0 ? 'bg-secondary hover:bg-red-800' : 'bg-gray-400 cursor-not-allowed'} text-white font-lexend text-xl font-bold uppercase py-5 transition-transform active:scale-95 flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+                                ${product.Kolichestvo > 0 ? 'В корзину' : 'Нет в наличии'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+                document.getElementById('product-container').innerHTML = html;
+
+            } catch (error) {
+                console.error(error);
+                document.getElementById('product-container').innerHTML = '<div class="text-center text-red-500 py-20">Ошибка загрузки данных товара</div>';
+            }
+        }
+
+        function addToCartAndRedirect(id, name, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id, name, price, quantity: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            window.location.href = 'ShopingCart.html';
+        }
+
+        loadProductDetails();
+    </script>
 </body>
 
 </html>

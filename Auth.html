@@ -11,35 +11,34 @@
 </head>
 
 <body class="bg-surface text-on-surface min-h-screen flex flex-col">
-    <header class="bg-white border-b-2 border-gray-200 sticky top-0 z-50">
-        <nav class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto w-full">
-            <a href="Main.html" class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 transition-all duration-300 shadow-sm">
+        <div class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto w-full">
+            <a href="Main.html" class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter transition-transform duration-300 hover:scale-105">
                 POWERPLAY HOCKEY
             </a>
-            <div class="hidden md:flex items-center gap-2">
-                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
-                    href="Catalog.html">Коньки</a>
-                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
-                    href="Catalog.html">Клюшки</a>
-                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
-                    href="Catalog.html">Защита</a>
-                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
-                    href="Catalog.html">Шлемы</a>
-                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
-                    href="Catalog.html">Вратарь</a>
-                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150"
-                    href="Catalog.html">Одежда</a>
+            <nav class="hidden lg:flex items-center space-x-8 h-full">
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Коньки</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Клюшки</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Защита</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Шлемы</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Вратарь</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Одежда</a>
+            </nav>
+            <div class="flex items-center space-x-6">
+                <a href="ShopingCart.html" class="relative p-2 scale-100 hover:scale-110 active:scale-95 transition-all text-secondary">
+                    <span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+                    <span id="header-cart-badge" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-white scale-0 transition-transform duration-300">0</span>
+                </a>
+                <a href="UserProfile.html" class="p-2 scale-100 hover:scale-110 active:scale-95 transition-all text-gray-600 hover:text-primary">
+                    <span class="material-symbols-outlined text-[28px]">account_circle</span>
+                </a>
             </div>
-            <div class="flex items-center gap-6">
-                <a href="ShopingCart.html"
-                    class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">shopping_cart</a>
-                <a href="Auth.html" class="material-symbols-outlined text-secondary font-bold inline-block"
-                    style="font-variation-settings: 'FILL' 1;">account_circle</a>
-            </div>
-        </nav>
+        </div>
     </header>
     <main class="flex-1 w-full max-w-[1440px] mx-auto px-8 py-16 flex items-center justify-center">
-        <div class="w-full max-w-md bg-white border border-gray-300 p-8 shadow-sm">
+        <div class="w-full max-w-md bg-white border border-gray-300 p-8 shadow-sm relative">
+            <div id="error-msg" class="hidden bg-red-100 text-red-700 p-3 mb-4 text-sm font-bold border border-red-300">
+            </div>
             <div class="flex gap-4 mb-8 border-b border-gray-200 pb-4">
                 <button id="tab-login"
                     class="flex-1 font-lexend text-xl font-bold uppercase text-primary border-b-2 border-primary pb-2 transition-colors">Вход</button>
@@ -47,53 +46,47 @@
                     class="flex-1 font-lexend text-xl font-bold uppercase text-gray-400 hover:text-primary transition-colors pb-2">Регистрация</button>
             </div>
 
-            <form id="form-login" class="flex flex-col gap-6" action="UserProfile.html">
+            <form id="form-login" class="flex flex-col gap-6">
                 <div class="flex flex-col gap-2">
-                    <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Логин / Email</label>
-                    <input type="email" required
+                    <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Email</label>
+                    <input id="login-email" type="email" required
                         class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"
                         placeholder="user@hockeypro.by" />
                 </div>
                 <div class="flex flex-col gap-2">
                     <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Пароль</label>
-                    <input type="password" required
+                    <input id="login-password" type="password" required
                         class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"
                         placeholder="••••••••••••" />
                 </div>
-                <button type="submit"
+                <button id="btn-login" type="submit"
                     class="w-full bg-primary text-white py-4 font-lexend text-lg font-bold uppercase tracking-tighter hover:bg-zinc-800 transition-all transform active:scale-95 mt-2">
                     Войти
                 </button>
-                <div class="text-center mt-4">
-                    <a href="#"
-                        class="text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-secondary underline decoration-2 underline-offset-4 transition-colors">
-                        Забыли пароль? Восстановить через Email
-                    </a>
-                </div>
             </form>
 
-            <form id="form-register" class="hidden flex-col gap-6" action="UserProfile.html">
+            <form id="form-register" class="hidden flex-col gap-6">
                 <div class="flex flex-col gap-2">
                     <label class="text-xs font-bold uppercase tracking-widest text-gray-500">ФИО</label>
-                    <input type="text" required
+                    <input id="reg-fio" type="text" required
                         class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"
                         placeholder="Иванов Иван Иванович" />
                 </div>
                 <div class="flex flex-col gap-2">
                     <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Email</label>
-                    <input type="email" required
+                    <input id="reg-email" type="email" required
                         class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"
                         placeholder="user@hockeypro.by" />
                 </div>
                 <div class="flex flex-col gap-2">
                     <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Телефон</label>
-                    <input type="tel" required
+                    <input id="reg-phone" type="tel" required
                         class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"
                         placeholder="+375 (__) ___-__-__" />
                 </div>
                 <div class="flex flex-col gap-2">
                     <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Пароль</label>
-                    <input type="password" required
+                    <input id="reg-password" type="password" required
                         class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium"
                         placeholder="••••••••••••" />
                 </div>
@@ -105,7 +98,7 @@
                         от 07.05.2021 № 99-З.
                     </label>
                 </div>
-                <button type="submit"
+                <button id="btn-register" type="submit"
                     class="w-full bg-secondary text-white py-4 font-lexend text-lg font-bold uppercase tracking-tighter hover:bg-red-800 transition-all transform active:scale-95 mt-2">
                     Зарегистрироваться
                 </button>
@@ -120,18 +113,6 @@
                 <p class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500">© 2024 POWERPLAY
                     HOCKEY. ЭКИПИРОВКА ДЛЯ ЛЬДА.</p>
             </div>
-            <div class="flex flex-wrap gap-6 md:justify-end">
-                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
-                    href="#">Гарантия</a>
-                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
-                    href="#">Доставка и возврат</a>
-                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
-                    href="#">Размеры</a>
-                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
-                    href="#">Командам</a>
-                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 hover:underline decoration-2 underline-offset-4 transition-all"
-                    href="#">Контакты</a>
-            </div>
         </div>
     </footer>
     <script>
@@ -139,23 +120,75 @@
         const tabRegister = document.getElementById('tab-register');
         const formLogin = document.getElementById('form-login');
         const formRegister = document.getElementById('form-register');
+        const errorMsg = document.getElementById('error-msg');
+
+        function showError(msg) {
+            errorMsg.textContent = msg;
+            errorMsg.classList.remove('hidden');
+        }
 
         function activateTab(activeTab, activeForm, inactiveTab, inactiveForm) {
             activeTab.classList.remove('text-gray-400');
             activeTab.classList.add('text-primary', 'border-b-2', 'border-primary');
-
             inactiveTab.classList.remove('text-primary', 'border-b-2', 'border-primary');
             inactiveTab.classList.add('text-gray-400');
-
             activeForm.classList.remove('hidden');
             activeForm.classList.add('flex');
-
             inactiveForm.classList.remove('flex');
             inactiveForm.classList.add('hidden');
+            errorMsg.classList.add('hidden');
         }
 
         tabLogin.addEventListener('click', () => activateTab(tabLogin, formLogin, tabRegister, formRegister));
         tabRegister.addEventListener('click', () => activateTab(tabRegister, formRegister, tabLogin, formLogin));
+
+        formLogin.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('btn-login');
+            btn.textContent = 'ОБРАБОТКА...';
+            try {
+                const res = await fetch('http://localhost:3000/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: document.getElementById('login-email').value,
+                        password: document.getElementById('login-password').value
+                    })
+                });
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.error);
+                localStorage.setItem('token', data.token);
+                window.location.href = 'UserProfile.html';
+            } catch (err) {
+                showError(err.message);
+                btn.textContent = 'ВОЙТИ';
+            }
+        });
+
+        formRegister.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('btn-register');
+            btn.textContent = 'ОБРАБОТКА...';
+            try {
+                const res = await fetch('http://localhost:3000/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        fio: document.getElementById('reg-fio').value,
+                        email: document.getElementById('reg-email').value,
+                        phone: document.getElementById('reg-phone').value,
+                        password: document.getElementById('reg-password').value
+                    })
+                });
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.error);
+                localStorage.setItem('token', data.token);
+                window.location.href = 'UserProfile.html';
+            } catch (err) {
+                showError(err.message);
+                btn.textContent = 'ЗАРЕГИСТРИРОВАТЬСЯ';
+            }
+        });
     </script>
 </body>
 

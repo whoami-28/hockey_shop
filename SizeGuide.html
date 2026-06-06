@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>POWERPLAY HOCKEY | Подбор размера</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="tailwind-config.js"></script>
-    <link rel="stylesheet" href="style.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
 </head>
+
 <body class="bg-surface text-on-surface min-h-screen flex flex-col">
-    <header class="bg-white border-b-2 border-gray-200 sticky top-0 z-50">
-        <nav class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto w-full">
-            <a href="Main.html" class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 transition-all duration-300 shadow-sm">
+        <div class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto w-full">
+            <a href="Main.html" class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter transition-transform duration-300 hover:scale-105">
                 POWERPLAY HOCKEY
             </a>
-            <div class="hidden md:flex items-center gap-2">
-                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-gray-600 hover:text-red-600 hover:bg-gray-50 transition-all duration-150" href="Catalog.html">Каталог</a>
-                <a class="px-4 py-2 font-lexend font-bold uppercase tracking-tighter text-secondary bg-red-50 transition-all duration-150" href="SizeGuide.html">Умный подбор</a>
+            <nav class="hidden lg:flex items-center space-x-8 h-full">
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Коньки</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Клюшки</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Защита</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Шлемы</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Вратарь</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Одежда</a>
+            </nav>
+            <div class="flex items-center space-x-6">
+                <a href="ShopingCart.html" class="relative p-2 scale-100 hover:scale-110 active:scale-95 transition-all text-secondary">
+                    <span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+                    <span id="header-cart-badge" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-white scale-0 transition-transform duration-300">0</span>
+                </a>
+                <a href="UserProfile.html" class="p-2 scale-100 hover:scale-110 active:scale-95 transition-all text-gray-600 hover:text-primary">
+                    <span class="material-symbols-outlined text-[28px]">account_circle</span>
+                </a>
             </div>
-            <div class="flex items-center gap-6">
-                <a href="ShopingCart.html" class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">shopping_cart</a>
-                <a href="UserProfile.html" class="material-symbols-outlined text-gray-500 hover:text-secondary transition-colors inline-block">account_circle</a>
-            </div>
-        </nav>
+        </div>
     </header>
 
     <main class="max-w-[1440px] mx-auto px-8 py-16 w-full flex-1">
         <div class="mb-12 text-center max-w-3xl mx-auto">
-            <span class="bg-secondary text-white text-xs font-bold px-3 py-1 mb-4 inline-block uppercase tracking-widest">PRO Технология</span>
-            <h1 class="font-lexend text-5xl font-black uppercase text-primary mb-4 tracking-tighter">Умный подбор экипировки</h1>
-            <p class="text-gray-600 text-lg">Введите ваши антропометрические данные, и наш алгоритм подберет идеальные размеры защиты и параметры клюшки для максимальной эффективности на льду.</p>
+            <span
+                class="bg-secondary text-white text-xs font-bold px-3 py-1 mb-4 inline-block uppercase tracking-widest">PRO
+                Технология</span>
+            <h1 class="font-lexend text-5xl font-black uppercase text-primary mb-4 tracking-tighter">Умный подбор
+                экипировки</h1>
+            <p class="text-gray-600 text-lg">Введите ваши антропометрические данные, и наш алгоритм подберет идеальные
+                размеры защиты и параметры клюшки для максимальной эффективности на льду.</p>
         </div>
 
         <div class="grid grid-cols-12 gap-12 items-start">
@@ -39,24 +55,33 @@
                 <form id="size-calculator" class="flex flex-col gap-6">
                     <div class="flex flex-col gap-2">
                         <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Рост (см)</label>
-                        <input id="calc-height" type="number" min="100" max="220" required class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium text-lg" placeholder="Например: 180"/>
+                        <input id="calc-height" type="number" min="100" max="220" required
+                            class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium text-lg"
+                            placeholder="Например: 180" />
                     </div>
                     <div class="flex flex-col gap-2">
                         <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Вес (кг)</label>
-                        <input id="calc-weight" type="number" min="20" max="150" required class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium text-lg" placeholder="Например: 85"/>
+                        <input id="calc-weight" type="number" min="20" max="150" required
+                            class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium text-lg"
+                            placeholder="Например: 85" />
                     </div>
                     <div class="flex flex-col gap-2">
-                        <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Объем груди (см)</label>
-                        <input id="calc-chest" type="number" min="50" max="140" required class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium text-lg" placeholder="Например: 102"/>
+                        <label class="text-xs font-bold uppercase tracking-widest text-gray-500">Объем груди
+                            (см)</label>
+                        <input id="calc-chest" type="number" min="50" max="140" required
+                            class="w-full border border-gray-300 px-4 py-3 focus:ring-0 focus:border-primary font-medium text-lg"
+                            placeholder="Например: 102" />
                     </div>
-                    <button type="submit" class="w-full bg-primary text-white py-4 font-lexend text-xl font-bold uppercase tracking-tighter hover:bg-zinc-800 transition-transform active:scale-95 mt-4">
+                    <button type="submit"
+                        class="w-full bg-primary text-white py-4 font-lexend text-xl font-bold uppercase tracking-tighter hover:bg-zinc-800 transition-transform active:scale-95 mt-4">
                         Рассчитать экипировку
                     </button>
                 </form>
             </div>
 
             <div class="col-span-12 lg:col-span-7">
-                <div id="results-placeholder" class="h-full min-h-[400px] border-2 border-dashed border-gray-300 flex flex-col items-center justify-center text-gray-400 bg-gray-50/50">
+                <div id="results-placeholder"
+                    class="h-full min-h-[400px] border-2 border-dashed border-gray-300 flex flex-col items-center justify-center text-gray-400 bg-gray-50/50">
                     <span class="material-symbols-outlined text-6xl mb-4 opacity-50">accessibility_new</span>
                     <p class="font-bold uppercase tracking-widest text-sm">Заполните форму для расчета</p>
                 </div>
@@ -68,7 +93,8 @@
                             <h3 class="font-bold uppercase tracking-widest text-xs">Клюшка (Flex)</h3>
                         </div>
                         <p id="res-flex" class="font-lexend text-4xl font-black text-primary mb-2">85 Flex</p>
-                        <p class="text-sm text-gray-600">Оптимальная жесткость для резких бросков на основе вашего веса.</p>
+                        <p class="text-sm text-gray-600">Оптимальная жесткость для резких бросков на основе вашего веса.
+                        </p>
                     </div>
 
                     <div class="bg-white border-l-4 border-primary p-6 shadow-sm">
@@ -77,7 +103,8 @@
                             <h3 class="font-bold uppercase tracking-widest text-xs">Нагрудник (Плечи)</h3>
                         </div>
                         <p id="res-chest" class="font-lexend text-4xl font-black text-primary mb-2">Senior L</p>
-                        <p class="text-sm text-gray-600">Рассчитано по объему грудной клетки для защиты жизненно важных зон.</p>
+                        <p class="text-sm text-gray-600">Рассчитано по объему грудной клетки для защиты жизненно важных
+                            зон.</p>
                     </div>
 
                     <div class="bg-white border-l-4 border-primary p-6 shadow-sm">
@@ -89,7 +116,8 @@
                         <p class="text-sm text-gray-600">Идеальная длина от колена до голеностопа при вашем росте.</p>
                     </div>
 
-                    <div class="bg-blue-950 p-6 shadow-sm text-white flex flex-col justify-center items-center text-center group cursor-pointer hover:bg-secondary transition-colors" onclick="window.location.href='Catalog.html'">
+                    <div class="bg-blue-950 p-6 shadow-sm text-white flex flex-col justify-center items-center text-center group cursor-pointer hover:bg-secondary transition-colors"
+                        onclick="window.location.href='Catalog.html'">
                         <span class="material-symbols-outlined text-4xl mb-2">shopping_bag</span>
                         <p class="font-lexend font-bold uppercase text-lg">Перейти в каталог</p>
                         <p class="text-xs opacity-70 mt-1">Применить фильтры</p>
@@ -102,11 +130,14 @@
     <footer class="bg-gray-100 border-t-2 border-gray-300 mt-auto">
         <div class="max-w-[1440px] mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
             <div>
-                <div class="text-lg font-black text-blue-950 font-lexend uppercase tracking-tighter mb-4">POWERPLAY HOCKEY</div>
-                <p class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500">© 2024 POWERPLAY HOCKEY. ЭКИПИРОВКА ДЛЯ ЛЬДА.</p>
+                <div class="text-lg font-black text-blue-950 font-lexend uppercase tracking-tighter mb-4">POWERPLAY
+                    HOCKEY</div>
+                <p class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500">© 2024 POWERPLAY
+                    HOCKEY. ЭКИПИРОВКА ДЛЯ ЛЬДА.</p>
             </div>
             <div class="flex flex-wrap gap-6 md:justify-end">
-                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 transition-all" href="#">Контакты</a>
+                <a class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-blue-950 transition-all"
+                    href="#">Контакты</a>
             </div>
         </div>
     </footer>
@@ -147,7 +178,12 @@
             document.getElementById('results-placeholder').classList.add('hidden');
             document.getElementById('results-container').classList.remove('hidden');
             document.getElementById('results-container').classList.add('grid');
+
+            document.getElementById('results-container').lastElementChild.onclick = function() {
+                window.location.href = 'Catalog.html?flex=' + flex;
+            };
         });
     </script>
 </body>
+
 </html>

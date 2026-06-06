@@ -1,14 +1,93 @@
 const express = require('express');
 const cors = require('cors');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const db = require('./database');
 const path = require('path');
 
 const app = express();
 const PORT = 3000;
+const JWT_SECRET = 'powerplay-super-secret-key';
 
 app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname));
+
+const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+  if (token == null) return res.sendStatus(401);
+  jwt.verify(token, JWT_SECRET, (err, user) => {
+    if (err) return res.sendStatus(403);
+    req.user = user;
+    next();
+  });
+};
+
+app.post('/api/register', async (req, res) => {
+  const { fio, email, phone, password } = req.body;
+  try {
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(password, salt);
+    
+    db.run(
+      `INSERT INTO Polzovatel (FIO, Email, Telefon, Parol) VALUES (?, ?, ?, ?)`,
+      [fio, email, phone, hash],
+      function(err) {
+        if (err) {
+          if (err.message.includes('UNIQUE')) return res.status(400).json({ error: 'Email уже используется' });
+          return res.status(500).json({ error: err.message });
+        }
+        const token = jwt.sign({ id: this.lastID }, JWT_SECRET, { expiresIn: '24h' });
+        res.json({ token });
+      }
+    );
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.post('/api/login', (req, res) => {
+  const { email, password } = req.body;
+  db.get(`SELECT * FROM Polzovatel WHERE Email = ?`, [email], async (err, user) => {
+    if (err) return res.status(500).json({ error: err.message });
+    if (!user) return res.status(404).json({ error: "Пользователь не найден" });
+
+    const isMatch = await bcrypt.compare(password, user.Parol);
+    if (!isMatch) return res.status(400).json({ error: "Неверный пароль" });
+
+    const token = jwt.sign({ id: user.ID_Polzovatelya }, JWT_SECRET, { expiresIn: '24h' });
+    res.json({ token });
+  });
+});
+
+app.get('/api/user/me', authenticateToken, (req, res) => {
+  db.get(
+    `SELECT ID_Polzovatelya, FIO, Email, Telefon, Adres FROM Polzovatel WHERE ID_Polzovatelya = ?`, 
+    [req.user.id], 
+    (err, row) => {
+      if (err) return res.status(500).json({ error: err.message });
+      if (!row) return res.status(404).json({ error: "Пользователь не найден" });
+      res.json(row);
+    }
+  );
+});
+
+app.get('/api/user/orders', authenticateToken, (req, res) => {
+  const sql = `
+    SELECT z.ID_Zakaza, z.Data_zakaza, s.Sostoyanie_zakaza, SUM(sod.Summa) as TotalSum
+    FROM Zakaz z
+    LEFT JOIN Status s ON z.Status_FK = s.ID_Statusa
+    LEFT JOIN Soderzhimoe sod ON z.ID_Zakaza = sod.ID_Zakaza_FK
+    WHERE z.ID_Polzovatelya_FK = ?
+    GROUP BY z.ID_Zakaza
+    ORDER BY z.Data_zakaza DESC
+  `;
+  db.all(sql, [req.user.id], (err, rows) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(rows);
+  });
+});
 
 app.get('/api/tovar', (req, res) => {
   const sql = `
@@ -22,6 +101,22 @@ app.get('/api/tovar', (req, res) => {
   db.all(sql, [], (err, rows) => {
     if (err) return res.status(500).json({ error: err.message });
     res.json(rows);
+  });
+});
+
+app.get('/api/tovar/:id', (req, res) => {
+  const sql = `
+    SELECT Tovar.*, Kategoriya.Nazvanie as Kategoriya_Nazvanie, Brend.Naimenovanie as Brend_Naimenovanie, Model.Naimenovanie as Model_Naimenovanie, Model.Harakteristiki
+    FROM Tovar
+    LEFT JOIN Kategoriya ON Tovar.ID_Kategorii = Kategoriya.ID_Kategorii
+    LEFT JOIN Brend ON Tovar.ID_Brenda = Brend.ID_Brenda
+    LEFT JOIN Model ON Tovar.ID_Modeli = Model.ID_Modeli
+    WHERE Tovar.ID_Tovara = ?
+  `;
+  db.get(sql, [req.params.id], (err, row) => {
+    if (err) return res.status(500).json({ error: err.message });
+    if (!row) return res.status(404).json({ error: "Товар не найден" });
+    res.json(row);
   });
 });
 
@@ -45,13 +140,13 @@ app.delete('/api/admin/products/:id', (req, res) => {
   });
 });
 
-app.post('/api/zakaz', (req, res) => {
-  const { id_polzovatelya, status_fk, items } = req.body;
+app.post('/api/zakaz', authenticateToken, (req, res) => {
+  const { status_fk, items } = req.body;
   const dataZakaza = new Date().toISOString();
 
   db.run(
     `INSERT INTO Zakaz (Data_zakaza, Status_FK, ID_Polzovatelya_FK) VALUES (?, ?, ?)`,
-    [dataZakaza, status_fk, id_polzovatelya],
+    [dataZakaza, status_fk, req.user.id],
     function(err) {
       if (err) return res.status(500).json({ error: err.message });
       const zakazId = this.lastID;
@@ -108,5 +203,5 @@ app.get('/api/admin/clients', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}/Main.html`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
