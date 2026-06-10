@@ -10,47 +10,85 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
+    <style>
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #bb0027;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
 </head>
 
-<body class="bg-background text-on-surface">
+<body class="bg-surface text-on-surface flex flex-col min-h-screen">
+
     <header class="bg-white border-b border-gray-200 sticky top-0 z-50 transition-all duration-300 shadow-sm">
         <div class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto w-full">
-            <a href="Main.html" class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter transition-transform duration-300 hover:scale-105">
+            <a href="Main.html"
+                class="text-2xl font-black italic text-blue-950 font-lexend uppercase tracking-tighter transition-transform duration-300 hover:scale-105">
                 POWERPLAY HOCKEY
             </a>
-            <nav class="hidden lg:flex items-center space-x-8 h-full">
-                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Коньки</a>
-                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Клюшки</a>
-                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Защита</a>
-                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Шлемы</a>
-                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Вратарь</a>
-                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200" href="Catalog.html">Одежда</a>
+
+            <div class="relative hidden xl:block w-96 ml-8">
+                <input id="search-input" oninput="applyFilters()"
+                    class="w-full bg-gray-50 border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all rounded-sm font-medium"
+                    placeholder="Поиск по названию..." type="text" />
+                <span class="material-symbols-outlined absolute right-3 top-2 text-gray-400">search</span>
+            </div>
+
+            <nav class="hidden lg:flex items-center space-x-8 h-full ml-auto mr-8">
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200 cursor-pointer"
+                    onclick="toggleCategory('Коньки')">Коньки</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200 cursor-pointer"
+                    onclick="toggleCategory('Клюшки')">Клюшки</a>
+                <a class="nav-link text-gray-600 font-bold hover:text-secondary font-lexend uppercase tracking-tighter transition-colors duration-200 cursor-pointer"
+                    onclick="toggleCategory('Защита')">Защита</a>
+                <a href="SizeGuide.html"
+                    class="bg-secondary text-white px-4 py-1.5 font-lexend font-bold uppercase tracking-tighter hover:bg-red-800 transition-colors text-sm shadow-md">Умный
+                    подбор</a>
             </nav>
+
             <div class="flex items-center space-x-6">
-                <a href="ShopingCart.html" class="relative p-2 scale-100 hover:scale-110 active:scale-95 transition-all text-secondary">
-                    <span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
-                    <span id="header-cart-badge" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-white scale-0 transition-transform duration-300">0</span>
+                <a href="ShopingCart.html"
+                    class="relative p-2 scale-100 hover:scale-110 active:scale-95 transition-all text-gray-600 hover:text-secondary">
+                    <span class="material-symbols-outlined text-[28px]">shopping_cart</span>
+                    <span id="header-cart-badge"
+                        class="absolute -top-1 -right-1 bg-secondary text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-white scale-0 transition-transform duration-300">0</span>
                 </a>
-                <a href="UserProfile.html" class="p-2 scale-100 hover:scale-110 active:scale-95 transition-all text-gray-600 hover:text-primary">
+                <a href="UserProfile.html"
+                    class="p-2 scale-100 hover:scale-110 active:scale-95 transition-all text-gray-600 hover:text-primary">
                     <span class="material-symbols-outlined text-[28px]">account_circle</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <main class="max-w-[1440px] mx-auto px-8 py-12">
+    <main class="max-w-[1440px] mx-auto px-8 py-12 flex-1 w-full">
         <div class="mb-12 flex flex-col md:flex-row md:justify-between md:items-end gap-4">
             <div>
                 <h1 class="font-lexend text-6xl text-primary uppercase mb-2 font-black tracking-tighter">Экипировка</h1>
-                <p id="smart-filter-notice" class="text-secondary font-bold text-sm hidden flex items-center gap-1">
+                <p id="smart-filter-notice"
+                    class="text-secondary font-bold text-sm hidden flex items-center gap-1 bg-red-50 inline-block px-3 py-1 mt-2 border border-red-100">
                     <span class="material-symbols-outlined text-[18px]">auto_awesome</span>
-                    Применен фильтр умного подбора (Flex: <span id="smart-flex-val"></span>)
+                    Применен фильтр подбора (Flex: <span id="smart-flex-val" class="font-black text-primary"></span>)
                 </p>
             </div>
-            <div class="flex items-center gap-3">
-                <span class="text-sm font-bold text-gray-500 uppercase">Сортировка:</span>
+            <div class="flex items-center gap-3 bg-white border border-gray-200 p-2 shadow-sm">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest pl-2">Сортировка:</span>
                 <select id="sort-select" onchange="applyFilters()"
-                    class="border-gray-300 py-2 pl-4 pr-10 focus:ring-secondary focus:border-secondary font-medium">
+                    class="border-0 bg-transparent text-primary font-bold py-1 pl-2 pr-8 focus:ring-0 cursor-pointer">
                     <option value="default">Сначала новые</option>
                     <option value="price-asc">Сначала дешевые</option>
                     <option value="price-desc">Сначала дорогие</option>
@@ -64,41 +102,47 @@
                 <div>
                     <h4 class="font-bold uppercase tracking-widest text-sm mb-4 border-b pb-2">Категория</h4>
                     <div class="space-y-3">
-                        <label class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors">
+                        <label
+                            class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors group">
                             <input type="checkbox" value="Коньки"
-                                class="category-filter text-secondary focus:ring-secondary w-5 h-5"
+                                class="category-filter text-secondary focus:ring-secondary w-5 h-5 rounded-sm"
                                 onchange="applyFilters()" />
-                            <span class="font-medium">Коньки</span>
+                            <span class="font-medium group-hover:font-bold">Коньки</span>
                         </label>
-                        <label class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors">
+                        <label
+                            class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors group">
                             <input type="checkbox" value="Клюшки"
-                                class="category-filter text-secondary focus:ring-secondary w-5 h-5"
+                                class="category-filter text-secondary focus:ring-secondary w-5 h-5 rounded-sm"
                                 onchange="applyFilters()" />
-                            <span class="font-medium">Клюшки</span>
+                            <span class="font-medium group-hover:font-bold">Клюшки</span>
                         </label>
-                        <label class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors">
+                        <label
+                            class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors group">
                             <input type="checkbox" value="Защита"
-                                class="category-filter text-secondary focus:ring-secondary w-5 h-5"
+                                class="category-filter text-secondary focus:ring-secondary w-5 h-5 rounded-sm"
                                 onchange="applyFilters()" />
-                            <span class="font-medium">Защита</span>
+                            <span class="font-medium group-hover:font-bold">Защита</span>
                         </label>
-                        <label class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors">
+                        <label
+                            class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors group">
                             <input type="checkbox" value="Шлемы"
-                                class="category-filter text-secondary focus:ring-secondary w-5 h-5"
+                                class="category-filter text-secondary focus:ring-secondary w-5 h-5 rounded-sm"
                                 onchange="applyFilters()" />
-                            <span class="font-medium">Шлемы</span>
+                            <span class="font-medium group-hover:font-bold">Шлемы</span>
                         </label>
-                        <label class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors">
+                        <label
+                            class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors group">
                             <input type="checkbox" value="Вратарь"
-                                class="category-filter text-secondary focus:ring-secondary w-5 h-5"
+                                class="category-filter text-secondary focus:ring-secondary w-5 h-5 rounded-sm"
                                 onchange="applyFilters()" />
-                            <span class="font-medium">Вратарь</span>
+                            <span class="font-medium group-hover:font-bold">Вратарь</span>
                         </label>
-                        <label class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors">
+                        <label
+                            class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors group">
                             <input type="checkbox" value="Одежда"
-                                class="category-filter text-secondary focus:ring-secondary w-5 h-5"
+                                class="category-filter text-secondary focus:ring-secondary w-5 h-5 rounded-sm"
                                 onchange="applyFilters()" />
-                            <span class="font-medium">Одежда</span>
+                            <span class="font-medium group-hover:font-bold">Одежда</span>
                         </label>
                     </div>
                 </div>
@@ -106,57 +150,59 @@
                 <div>
                     <h4 class="font-bold uppercase tracking-widest text-sm mb-4 border-b pb-2">Бренд</h4>
                     <div class="space-y-3">
-                        <label class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors">
+                        <label
+                            class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors group">
                             <input type="checkbox" value="BAUER"
-                                class="brand-filter text-secondary focus:ring-secondary w-5 h-5"
+                                class="brand-filter text-secondary focus:ring-secondary w-5 h-5 rounded-sm"
                                 onchange="applyFilters()" />
-                            <span class="font-medium">BAUER</span>
+                            <span class="font-medium group-hover:font-bold">BAUER</span>
                         </label>
-                        <label class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors">
+                        <label
+                            class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors group">
                             <input type="checkbox" value="CCM"
-                                class="brand-filter text-secondary focus:ring-secondary w-5 h-5"
+                                class="brand-filter text-secondary focus:ring-secondary w-5 h-5 rounded-sm"
                                 onchange="applyFilters()" />
-                            <span class="font-medium">CCM</span>
+                            <span class="font-medium group-hover:font-bold">CCM</span>
                         </label>
-                        <label class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors">
+                        <label
+                            class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors group">
                             <input type="checkbox" value="WARRIOR"
-                                class="brand-filter text-secondary focus:ring-secondary w-5 h-5"
+                                class="brand-filter text-secondary focus:ring-secondary w-5 h-5 rounded-sm"
                                 onchange="applyFilters()" />
-                            <span class="font-medium">WARRIOR</span>
+                            <span class="font-medium group-hover:font-bold">WARRIOR</span>
                         </label>
-                        <label class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors">
+                        <label
+                            class="flex items-center gap-3 cursor-pointer hover:text-primary transition-colors group">
                             <input type="checkbox" value="TRUE"
-                                class="brand-filter text-secondary focus:ring-secondary w-5 h-5"
+                                class="brand-filter text-secondary focus:ring-secondary w-5 h-5 rounded-sm"
                                 onchange="applyFilters()" />
-                            <span class="font-medium">TRUE</span>
+                            <span class="font-medium group-hover:font-bold">TRUE</span>
                         </label>
                     </div>
                 </div>
                 <button onclick="resetFilters()"
-                    class="w-full py-3 border-2 border-gray-300 text-sm font-bold uppercase hover:border-primary hover:text-primary transition-colors">
+                    class="w-full py-3 border border-gray-300 text-xs font-bold uppercase tracking-widest text-gray-500 hover:border-secondary hover:text-secondary transition-colors bg-gray-50 hover:bg-red-50">
                     Сбросить фильтры
                 </button>
             </aside>
 
             <div class="flex-grow">
-                <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                    <div class="col-span-full text-center text-gray-500 py-20 flex flex-col items-center gap-4">
+                <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <div class="col-span-full text-center text-gray-400 py-32 flex flex-col items-center gap-4">
                         <span class="material-symbols-outlined text-4xl animate-spin">refresh</span>
-                        Загрузка товаров...
+                        <span class="font-bold uppercase tracking-widest text-sm">Загрузка базы данных...</span>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="bg-gray-100 border-t-2 border-gray-300 mt-20">
-        <div class="max-w-[1440px] mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-            <div>
-                <div class="text-lg font-black text-blue-950 font-lexend uppercase tracking-tighter mb-4">POWERPLAY
-                    HOCKEY</div>
-                <p class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500">© 2024 POWERPLAY
-                    HOCKEY. ЭКИПИРОВКА ДЛЯ ЛЬДА.</p>
+    <footer class="bg-gray-100 border-t-2 border-gray-300 mt-auto">
+        <div class="max-w-[1440px] mx-auto px-8 py-12 w-full text-center sm:text-left">
+            <div class="text-lg font-black text-blue-950 font-lexend uppercase tracking-tighter mb-2">POWERPLAY HOCKEY
             </div>
+            <p class="font-lexend text-xs font-medium uppercase tracking-widest text-gray-500">© 2024 POWERPLAY HOCKEY.
+                ЭКИПИРОВКА ДЛЯ ЛЬДА.</p>
         </div>
     </footer>
 
@@ -165,6 +211,23 @@
         const urlParams = new URLSearchParams(window.location.search);
         const smartFlex = urlParams.get('flex');
 
+        function updateBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const badge = document.getElementById('header-cart-badge');
+
+            if (badge) {
+                if (totalItems > 0) {
+                    badge.textContent = totalItems;
+                    badge.classList.remove('scale-0');
+                    badge.classList.add('scale-100');
+                } else {
+                    badge.classList.remove('scale-100');
+                    badge.classList.add('scale-0');
+                }
+            }
+        }
+
         async function loadProducts() {
             try {
                 const response = await fetch('http://localhost:3000/api/tovar');
@@ -172,22 +235,37 @@
                 allProducts = await response.json();
 
                 if (smartFlex) {
-                    document.getElementById('smart-filter-notice').classList.remove('hidden');
-                    document.getElementById('smart-flex-val').textContent = smartFlex;
+                    const notice = document.getElementById('smart-filter-notice');
+                    const val = document.getElementById('smart-flex-val');
+                    if (notice && val) {
+                        notice.classList.remove('hidden');
+                        val.textContent = smartFlex;
+                    }
                 }
 
                 applyFilters();
+                updateBadge();
             } catch (error) {
-                document.getElementById('product-grid').innerHTML = '<p class="col-span-full text-center text-red-500 py-10 font-bold">Ошибка соединения с базой данных.</p>';
+                console.error("Ошибка загрузки данных:", error);
+                document.getElementById('product-grid').innerHTML = `
+                <div class="col-span-full text-center text-red-500 py-20 flex flex-col items-center border-2 border-red-100 bg-red-50">
+                    <span class="material-symbols-outlined text-6xl mb-4">cloud_off</span>
+                    <p class="font-bold text-xl uppercase tracking-widest">Ошибка соединения с базой</p>
+                    <p class="text-sm mt-2 text-red-400">Проверьте, запущен ли сервер.</p>
+                </div>
+            `;
             }
         }
 
         function applyFilters() {
             let filtered = [...allProducts];
 
-            const searchQuery = document.getElementById('search-input').value.toLowerCase();
+            // Защищенное чтение поиска (не упадет, если элемента нет)
+            const searchInputEl = document.getElementById('search-input');
+            const searchQuery = searchInputEl ? searchInputEl.value.toLowerCase() : '';
+
             if (searchQuery) {
-                filtered = filtered.filter(p => p.Naimenovanie.toLowerCase().includes(searchQuery));
+                filtered = filtered.filter(p => p.Naimenovanie && p.Naimenovanie.toLowerCase().includes(searchQuery));
             }
 
             if (smartFlex) {
@@ -204,7 +282,9 @@
                 filtered = filtered.filter(p => selectedBrands.includes(p.Brend_Naimenovanie));
             }
 
-            const sortVal = document.getElementById('sort-select').value;
+            const sortSelectEl = document.getElementById('sort-select');
+            const sortVal = sortSelectEl ? sortSelectEl.value : 'default';
+
             if (sortVal === 'price-asc') {
                 filtered.sort((a, b) => a.Cena - b.Cena);
             } else if (sortVal === 'price-desc') {
@@ -216,14 +296,16 @@
 
         function renderGrid(products) {
             const grid = document.getElementById('product-grid');
+            if (!grid) return;
+
             grid.innerHTML = '';
 
             if (products.length === 0) {
                 grid.innerHTML = `
-                <div class="col-span-full text-center text-gray-500 py-20 flex flex-col items-center">
+                <div class="col-span-full text-center text-gray-400 py-32 flex flex-col items-center border border-dashed border-gray-300">
                     <span class="material-symbols-outlined text-6xl mb-4 text-gray-300">inventory_2</span>
-                    <p class="font-bold text-xl mb-2">Товары не найдены</p>
-                    <p class="text-sm">Попробуйте изменить параметры фильтрации.</p>
+                    <p class="font-bold text-xl mb-2 text-gray-500 uppercase tracking-widest">Товары не найдены</p>
+                    <p class="text-sm">Попробуйте изменить параметры фильтрации или сбросить их.</p>
                 </div>
             `;
                 return;
@@ -231,25 +313,30 @@
 
             products.forEach(product => {
                 const outOfStock = product.Kolichestvo <= 0;
+                const categoryIcon = getCategoryIcon(product.Kategoriya_Nazvanie);
+
                 const card = `
-                <div class="group relative bg-white border border-gray-200 hover:border-primary transition-all duration-300 flex flex-col h-full">
-                    <a href="Card.html?id=${product.ID_Tovara}" class="aspect-[4/5] bg-gray-50 relative overflow-hidden flex items-center justify-center border-b border-gray-100">
-                        <span class="material-symbols-outlined text-9xl text-gray-200 group-hover:scale-110 transition-transform duration-500">sports_hockey</span>
-                        ${outOfStock ? '<div class="absolute inset-0 bg-white/60 flex items-center justify-center"><span class="bg-black text-white px-4 py-2 font-bold uppercase text-xs">Нет в наличии</span></div>' : ''}
+                <div class="group relative bg-white border border-gray-200 hover:border-secondary transition-all duration-300 flex flex-col h-full shadow-sm hover:shadow-md">
+                    <a href="Card.html?id=${product.ID_Tovara}" class="aspect-[4/5] bg-slate-50 relative overflow-hidden flex items-center justify-center border-b border-gray-100">
+                        <span class="material-symbols-outlined text-8xl text-slate-200 group-hover:scale-110 group-hover:text-slate-300 transition-all duration-500">${categoryIcon}</span>
+                        ${outOfStock ? '<div class="absolute inset-0 bg-white/70 flex items-center justify-center backdrop-blur-[1px]"><span class="bg-black text-white px-4 py-2 font-bold uppercase tracking-widest text-xs">Распродано</span></div>' : ''}
                     </a>
                     <div class="p-6 flex flex-col flex-1">
-                        <div class="flex justify-between items-start mb-2">
-                            <p class="text-xs text-gray-500 uppercase tracking-widest font-bold">${product.Brend_Naimenovanie || 'PRO'}</p>
-                            <span class="text-[10px] bg-gray-100 text-gray-600 px-2 py-1 uppercase font-bold">${product.Razmer || '-'}</span>
+                        <div class="flex justify-between items-start mb-3">
+                            <p class="text-[11px] text-gray-500 uppercase tracking-widest font-black">${product.Brend_Naimenovanie || 'PRO'}</p>
+                            <span class="text-[10px] bg-slate-100 text-slate-600 px-2.5 py-1 uppercase font-bold tracking-wider rounded-sm">${product.Razmer || '-'}</span>
                         </div>
-                        <a href="Card.html?id=${product.ID_Tovara}" class="hover:text-secondary transition-colors mb-4 block">
+                        <a href="Card.html?id=${product.ID_Tovara}" class="hover:text-secondary transition-colors mb-6 block">
                             <h3 class="text-xl font-bold text-primary font-lexend leading-tight line-clamp-2">${product.Naimenovanie}</h3>
                         </a>
-                        <div class="mt-auto flex justify-between items-end">
-                            <p class="text-2xl font-bold text-primary font-lexend">${product.Cena} <span class="text-sm">BYN</span></p>
-                            <button onclick="addToCart(${product.ID_Tovara}, '${product.Naimenovanie}', ${product.Cena})" 
+                        <div class="mt-auto flex justify-between items-end border-t border-gray-100 pt-4">
+                            <div>
+                                <p class="text-[10px] text-gray-400 uppercase font-bold tracking-widest mb-1">Цена</p>
+                                <p class="text-2xl font-black text-primary font-lexend leading-none">${product.Cena} <span class="text-sm font-bold text-gray-500">BYN</span></p>
+                            </div>
+                            <button onclick="addToCart(${product.ID_Tovara}, '${product.Naimenovanie.replace(/'/g, "\\'")}', ${product.Cena})" 
                                     ${outOfStock ? 'disabled' : ''}
-                                    class="bg-secondary text-white w-10 h-10 flex items-center justify-center hover:bg-red-800 transition-all active:scale-95 disabled:bg-gray-300 disabled:cursor-not-allowed rounded-sm">
+                                    class="bg-secondary text-white w-12 h-12 flex items-center justify-center hover:bg-red-800 transition-all active:scale-95 disabled:bg-slate-200 disabled:text-slate-400 disabled:cursor-not-allowed rounded-full shadow-md hover:shadow-lg">
                                 <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">add_shopping_cart</span>
                             </button>
                         </div>
@@ -260,14 +347,28 @@
             });
         }
 
+        function getCategoryIcon(categoryName) {
+            if (!categoryName) return 'sports_hockey';
+            const name = categoryName.toLowerCase();
+            if (name.includes('коньки')) return 'ice_skating';
+            if (name.includes('шлем') || name.includes('защита')) return 'sports_martial_arts';
+            if (name.includes('одежда') || name.includes('костюм')) return 'apparel';
+            return 'sports_hockey';
+        }
+
         function resetFilters() {
             document.querySelectorAll('.brand-filter').forEach(cb => cb.checked = false);
             document.querySelectorAll('.category-filter').forEach(cb => cb.checked = false);
-            document.getElementById('sort-select').value = 'default';
-            document.getElementById('search-input').value = '';
+            const sortSelectEl = document.getElementById('sort-select');
+            if (sortSelectEl) sortSelectEl.value = 'default';
+
+            const searchInputEl = document.getElementById('search-input');
+            if (searchInputEl) searchInputEl.value = '';
+
             if (smartFlex) {
                 window.history.replaceState({}, document.title, window.location.pathname);
-                document.getElementById('smart-filter-notice').classList.add('hidden');
+                const notice = document.getElementById('smart-filter-notice');
+                if (notice) notice.classList.add('hidden');
                 location.reload();
             } else {
                 applyFilters();
@@ -283,10 +384,20 @@
                 cart.push({ id, name, price, quantity: 1 });
             }
             localStorage.setItem('cart', JSON.stringify(cart));
-            window.location.href = 'ShopingCart.html';
+            updateBadge();
+            const badge = document.getElementById('header-cart-badge');
+            if (badge) {
+                badge.classList.add('scale-150', 'bg-green-500');
+                setTimeout(() => badge.classList.remove('scale-150', 'bg-green-500'), 300);
+            }
         }
-
-        loadProducts();
+        function toggleCategory(categoryName) {
+            document.querySelectorAll('.category-filter').forEach(cb => cb.checked = false);
+            const checkbox = document.querySelector(`.category-filter[value="${categoryName}"]`);
+            if (checkbox) checkbox.checked = true;
+            applyFilters();
+        }
+        document.addEventListener('DOMContentLoaded', loadProducts);
     </script>
 </body>
 
